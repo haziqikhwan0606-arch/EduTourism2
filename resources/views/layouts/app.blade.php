@@ -53,6 +53,12 @@
       <a href="{{ route('experiences') }}" class="nav-link {{ request()->routeIs('experiences') ? 'is-active' : '' }}">Experiences</a>
       <a href="{{ route('programmes') }}" class="nav-link {{ request()->routeIs('programmes') ? 'is-active' : '' }}">Programmes</a>
       <a href="{{ route('contact') }}" class="nav-link {{ request()->routeIs('contact') ? 'is-active' : '' }}">Contact</a>
+
+      <!-- Language Switcher Pill -->
+      <div class="lang-switcher-wrap" style="margin-left: 0.5rem;" title="Switch Language / 言語切替">
+        <button type="button" class="lang-btn js-lang-btn is-active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn js-lang-btn" data-lang="ja">日本語</button>
+      </div>
     </nav>
 
     <!-- Mobile Hamburger Toggle -->
@@ -84,6 +90,14 @@
         <a href="{{ route('experiences') }}" class="mobile-nav-link {{ request()->routeIs('experiences') ? 'is-active' : '' }}">Experiences (7 Areas)</a>
         <a href="{{ route('programmes') }}" class="mobile-nav-link {{ request()->routeIs('programmes') ? 'is-active' : '' }}">Programmes (MFLP 2027)</a>
         <a href="{{ route('contact') }}" class="mobile-nav-link {{ request()->routeIs('contact') ? 'is-active' : '' }}">Contact & Advisory</a>
+        
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+          <span style="display: block; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8da693; margin-bottom: 0.5rem;">Language / 言語</span>
+          <div class="lang-switcher-wrap" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15);">
+            <button type="button" class="lang-btn js-lang-btn is-active" data-lang="en" style="color: #ffffff;">EN</button>
+            <button type="button" class="lang-btn js-lang-btn" data-lang="ja" style="color: #ffffff;">日本語</button>
+          </div>
+        </div>
       </nav>
     </div>
 

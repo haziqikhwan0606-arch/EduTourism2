@@ -52,6 +52,12 @@
       <a href="/EduTourism2/experiences" class="nav-link ">Experiences</a>
       <a href="/EduTourism2/programmes" class="nav-link ">Programmes</a>
       <a href="/EduTourism2/contact" class="nav-link is-active">Contact</a>
+
+      <!-- Language Switcher Pill -->
+      <div class="lang-switcher-wrap" style="margin-left: 0.5rem;" title="Switch Language / 言語切替">
+        <button type="button" class="lang-btn js-lang-btn is-active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn js-lang-btn" data-lang="ja">日本語</button>
+      </div>
     </nav>
 
     <!-- Mobile Hamburger Toggle -->
@@ -83,6 +89,14 @@
         <a href="/EduTourism2/experiences" class="mobile-nav-link ">Experiences (7 Areas)</a>
         <a href="/EduTourism2/programmes" class="mobile-nav-link ">Programmes (MFLP 2027)</a>
         <a href="/EduTourism2/contact" class="mobile-nav-link is-active">Contact & Advisory</a>
+        
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+          <span style="display: block; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8da693; margin-bottom: 0.5rem;">Language / 言語</span>
+          <div class="lang-switcher-wrap" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15);">
+            <button type="button" class="lang-btn js-lang-btn is-active" data-lang="en" style="color: #ffffff;">EN</button>
+            <button type="button" class="lang-btn js-lang-btn" data-lang="ja" style="color: #ffffff;">日本語</button>
+          </div>
+        </div>
       </nav>
     </div>
 
@@ -195,7 +209,7 @@
       </div>
 
       <form action="/EduTourism2/contact/submit" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-        <input type="hidden" name="_token" value="ihA84vHTJ4DWQg238EZqadtMbf15sksDjf6nCFub" autocomplete="off">        <input type="hidden" name="inquiry_type" id="inquiryTypeInput" value="partnerships">
+        <input type="hidden" name="_token" value="RT0oCoGgK0FzpqvLq2CvxScOgfTWCEIQjfCDC8nz" autocomplete="off">        <input type="hidden" name="inquiry_type" id="inquiryTypeInput" value="partnerships">
 
         <div>
           <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-dark);">Full Name *</label>

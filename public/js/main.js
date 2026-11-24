@@ -96,21 +96,40 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  // 6. Contact Inquiry Type Switcher
-  var inquiryTabs = document.querySelectorAll(".js-inquiry-tab");
-  var inquiryPanels = document.querySelectorAll(".js-inquiry-panel");
-  var inquiryTypeInput = document.getElementById("inquiryTypeInput");
-  inquiryTabs.forEach(function(tab) {
-    tab.addEventListener("click", function(e) {
+  // 7. Global Language Switcher (EN / JA - Zero Language Mixing)
+  var langButtons = document.querySelectorAll(".js-lang-btn, .lang-btn");
+
+  function setLanguage(lang) {
+    if (!lang) lang = "en";
+    document.documentElement.setAttribute("data-lang", lang);
+    document.body.setAttribute("data-lang", lang);
+
+    langButtons.forEach(function(b) {
+      if (b.getAttribute("data-lang") === lang) {
+        b.classList.add("is-active");
+      } else {
+        b.classList.remove("is-active");
+      }
+    });
+
+    try {
+      localStorage.setItem("edutourism_lang", lang);
+    } catch (e) {}
+  }
+
+  langButtons.forEach(function(btn) {
+    btn.addEventListener("click", function(e) {
       e.preventDefault();
-      var type = this.getAttribute("data-inquiry-type");
-      inquiryTabs.forEach(function(t) { t.classList.remove("is-active"); });
-      inquiryPanels.forEach(function(p) { p.classList.remove("is-active"); });
-      this.classList.add("is-active");
-      var activePanel = document.querySelector('.js-inquiry-panel[data-panel="' + type + '"]');
-      if (activePanel) activePanel.classList.add("is-active");
-      if (inquiryTypeInput) inquiryTypeInput.value = type;
+      var selectedLang = this.getAttribute("data-lang");
+      setLanguage(selectedLang);
     });
   });
+
+  // Load saved language preference or default to English
+  var savedLang = "en";
+  try {
+    savedLang = localStorage.getItem("edutourism_lang") || "en";
+  } catch (e) {}
+  setLanguage(savedLang);
 });
 

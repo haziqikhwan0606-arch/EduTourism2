@@ -18,6 +18,40 @@
   <link rel="stylesheet" href="/EduTourism2/css/main.css">
 
   <link rel="stylesheet" href="/EduTourism2/wp-content/themes/unseen/public/css/programmes.css">
+<style>
+  /* Strict Language Visibility */
+  html[data-lang="en"] .lang-ja, body[data-lang="en"] .lang-ja { display: none !important; }
+  html[data-lang="en"] .lang-en, body[data-lang="en"] .lang-en { display: block; }
+  html[data-lang="en"] span.lang-en, html[data-lang="en"] a.lang-en, body[data-lang="en"] span.lang-en, body[data-lang="en"] a.lang-en { display: inline !important; }
+
+  html[data-lang="ja"] .lang-en, body[data-lang="ja"] .lang-en { display: none !important; }
+  html[data-lang="ja"] .lang-ja, body[data-lang="ja"] .lang-ja { display: block; }
+  html[data-lang="ja"] span.lang-ja, html[data-lang="ja"] a.lang-ja, body[data-lang="ja"] span.lang-ja, body[data-lang="ja"] a.lang-ja { display: inline !important; }
+
+  /* Floating Sticky Language Selector */
+  .floating-lang-pill {
+    position: sticky;
+    top: 5rem;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    pointer-events: none;
+  }
+  .floating-lang-inner {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(19, 36, 24, 0.15);
+    border-radius: 999px;
+    padding: 0.35rem 0.6rem;
+    box-shadow: 0 8px 24px rgba(19, 36, 24, 0.12);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+</style>
 </head>
 <body>
 
@@ -53,6 +87,12 @@
       <a href="/EduTourism2/experiences" class="nav-link ">Experiences</a>
       <a href="/EduTourism2/programmes" class="nav-link is-active">Programmes</a>
       <a href="/EduTourism2/contact" class="nav-link ">Contact</a>
+
+      <!-- Language Switcher Pill -->
+      <div class="lang-switcher-wrap" style="margin-left: 0.5rem;" title="Switch Language / 言語切替">
+        <button type="button" class="lang-btn js-lang-btn is-active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn js-lang-btn" data-lang="ja">日本語</button>
+      </div>
     </nav>
 
     <!-- Mobile Hamburger Toggle -->
@@ -84,6 +124,14 @@
         <a href="/EduTourism2/experiences" class="mobile-nav-link ">Experiences (7 Areas)</a>
         <a href="/EduTourism2/programmes" class="mobile-nav-link is-active">Programmes (MFLP 2027)</a>
         <a href="/EduTourism2/contact" class="mobile-nav-link ">Contact & Advisory</a>
+        
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+          <span style="display: block; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8da693; margin-bottom: 0.5rem;">Language / 言語</span>
+          <div class="lang-switcher-wrap" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15);">
+            <button type="button" class="lang-btn js-lang-btn is-active" data-lang="en" style="color: #ffffff;">EN</button>
+            <button type="button" class="lang-btn js-lang-btn" data-lang="ja" style="color: #ffffff;">日本語</button>
+          </div>
+        </div>
       </nav>
     </div>
 
@@ -103,981 +151,1074 @@
     
     <main id="main-content" class="prog-main-flow">
 
-    <!-- ======================================================================
-         SECTION 01: HERO SECTION
-         ====================================================================== -->
-    <section class="prog-hero-section exp-hero-section" id="section-01-hero">
-      <div class="prog-container exp-hero-inner">
-        <span class="exp-eyebrow">OLYMPIA EDUTOURISM · ACADEMIC MOBILITY & FIELD LEARNING</span>
-        <h1 class="exp-headline t-serif t-italic">Field Learning & Academic Programmes.</h1>
+  <!-- Floating In-Page Language Switcher -->
+  <div class="floating-lang-pill">
+    <div class="floating-lang-inner">
+      <span style="font-size: 0.8rem; font-weight: 600; color: #132418; margin-right: 0.35rem; padding-left: 0.5rem;">
+        <span class="lang-en">🌐 Language:</span>
+        <span class="lang-ja">🌐 表示言語:</span>
+      </span>
+      <button type="button" class="lang-btn js-lang-btn is-active" data-lang="en" style="padding: 0.4rem 1rem; font-size: 0.85rem;">
+        English
+      </button>
+      <button type="button" class="lang-btn js-lang-btn" data-lang="ja" style="padding: 0.4rem 1rem; font-size: 0.85rem;">
+        日本語
+      </button>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       SECTION 01: HERO SECTION
+       ====================================================================== -->
+  <section class="prog-hero-section exp-hero-section" id="section-01-hero">
+    <div class="prog-container exp-hero-inner">
+      <div class="lang-en">
+        <span class="exp-eyebrow">OLYMPIA EDUTOURISM · ACADEMIC MOBILITY &amp; FIELD LEARNING</span>
+        <h1 class="exp-headline t-serif t-italic">Field Learning &amp; Academic Programmes.</h1>
         <p class="exp-subtext" style="max-width: 48rem;">
-          Olympia EduTourism curates rigorous, high-impact field study programmes connecting international universities, student cohorts, and researchers with living communities, smart urban infrastructure, and sustainable industries across Malaysia.
+          Rigorous field study programmes connecting international universities, student cohorts, and researchers with living communities, smart urban infrastructure, and sustainable industries across Malaysia.
         </p>
+      </div>
 
-        <div class="prog-hero-actions" style="display: flex; gap: 1rem; align-items: center; margin-bottom: 2.5rem; flex-wrap: wrap;">
-          <a href="#section-02-flagship" class="exp-next-section-btn js-prog-scroll-anchor" data-cursor="hide" style="padding: 0.65rem 1.6rem; font-size: 0.92rem;">
-            <span>Explore Osaka 2027 Pilot</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="#section-09-consultation" class="exp-next-section-btn js-prog-scroll-anchor" data-cursor="hide" style="background: rgba(255,255,255,0.7); color: #132418; border: 1px solid rgba(19,36,24,0.15); padding: 0.65rem 1.6rem; font-size: 0.92rem;">
-            <span>Design a Custom Programme ↗</span>
-          </a>
-        </div>
+      <div class="lang-ja">
+        <span class="exp-eyebrow">オリンピア・エデュツーリズム · 学術モビリティ＆現地フィールドワーク</span>
+        <h1 class="exp-headline t-serif t-italic">学術現地研修＆国際モビリティプログラム</h1>
+        <p class="exp-subtext" style="max-width: 48rem;">
+          マレーシアの生きた地域社会、先進的なスマート都市、持続可能な産業現場を舞台に、世界の大学・研究者・学生を結ぶ質の高い実践型フィールドワークプログラムです。
+        </p>
+      </div>
 
-        <!-- Official Brochure Watercolor Skyline Banner -->
-        <div class="prog-hero-banner-wrap" style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 16px 45px rgba(19,36,24,0.12); margin-top: 1rem;">
-          <img src="/EduTourism2/wp-content/uploads/programmes/mflp_brochure_banner_skyline.jpg" alt="Malaysia Field Learning Programme Skyline" class="prog-hero-banner-img" style="width: 100%; height: auto; display: block;">
-          <div class="prog-hero-floating-badge" style="position: absolute; bottom: 1.5rem; left: 1.5rem; background: rgba(19,36,24,0.88); backdrop-filter: blur(8px); color: #ffffff; padding: 0.5rem 1.25rem; border-radius: 999px; font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-            <span style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80;"></span>
-            <span>Flagship Delegation · University of Osaka 2027 Pilot Collaboration</span>
-          </div>
+      <div class="prog-hero-actions" style="display: flex; gap: 1rem; align-items: center; margin-bottom: 2.5rem; flex-wrap: wrap;">
+        <a href="#section-02-flagship" class="exp-next-section-btn js-prog-scroll-anchor" data-cursor="hide" style="padding: 0.65rem 1.6rem; font-size: 0.92rem;">
+          <span class="lang-en">Explore Osaka 2027 Pilot</span>
+          <span class="lang-ja">大阪大学向け2027年試行案を見る</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="/EduTourism2/Osaka_2027_Malaysia_Field_Learning_Brochure (1).pdf" target="_blank" class="exp-next-section-btn js-prog-scroll-anchor" data-cursor="hide" style="background: rgba(255,255,255,0.7); color: #132418; border: 1px solid rgba(19,36,24,0.15); padding: 0.65rem 1.6rem; font-size: 0.92rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.35rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span class="lang-en">Download Brochure (PDF)</span>
+          <span class="lang-ja">研修案内パンフレット (PDF)</span>
+        </a>
+      </div>
+
+      <!-- Official Banner -->
+      <div class="prog-hero-banner-wrap" style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 16px 45px rgba(19,36,24,0.12); margin-top: 1rem;">
+        <img src="/EduTourism2/wp-content/uploads/programmes/mflp_brochure_banner_skyline.jpg" alt="Malaysia Field Learning Programme Skyline" class="prog-hero-banner-img" style="width: 100%; height: auto; display: block;">
+        <div class="prog-hero-floating-badge" style="position: absolute; bottom: 1.5rem; left: 1.5rem; background: rgba(19,36,24,0.88); backdrop-filter: blur(8px); color: #ffffff; padding: 0.5rem 1.25rem; border-radius: 999px; font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80;"></span>
+          <span class="lang-en">Flagship Delegation · University of Osaka 2027 Pilot Collaboration</span>
+          <span class="lang-ja">国際フラッグシップ · 大阪大学 2027年試行連携プログラム</span>
         </div>
       </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 02: FLAGSHIP PROGRAMME OVERVIEW (OSAKA 2027 PILOT)
-         ====================================================================== -->
-    <section class="prog-section" id="section-02-flagship" style="padding-top: 4rem;">
-      <div class="prog-container">
-        
-        <div class="exp-mflp-card" style="background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(19,36,24,0.12); border-radius: 28px; padding: 3rem; box-shadow: 0 16px 45px rgba(19,36,24,0.08); backdrop-filter: blur(12px);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
-            <div>
-              <span class="exp-eyebrow" style="color: #24462c;">FEATURED FLAGSHIP PROGRAMME</span>
-              <h2 class="exp-mflp-title t-serif" style="font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.15; color: #132418; margin: 0.4rem 0;">
-                Malaysia Field Learning Programme
-              </h2>
-              <div class="lang-en" style="font-size: 0.95rem; color: #5d7565; margin-top: 0.25rem; font-style: italic;">
-                Proposed 2027 Pilot for the University of Osaka
-              </div>
-              <div class="lang-ja" style="font-size: 1.25rem; font-weight: 600; color: #24462c; margin-top: 0.2rem;">
-                マレーシア現地研修プログラム (大阪大学向け 2027 年試行実施案)
-              </div>
-            </div>
-
-            <div style="display: flex; gap: 1rem; align-items: center; background: rgba(19,36,24,0.05); padding: 0.85rem 1.35rem; border-radius: 16px;">
-              <div style="text-align: right;">
-                <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #5d7565;">Academic Consultation</div>
-                <div style="font-size: 0.95rem; font-weight: 700; color: #132418;">Prof. Yoshinori Sumimura</div>
-                <div class="lang-ja" style="font-size: 0.8rem; color: #384c3e;">住村欣範教授 との意見交換</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Key Programme Metrics Grid (From Brochure Page 1) -->
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
-            
-            <div style="background: rgba(255,255,255,0.92); border: 1px solid rgba(19,36,24,0.09); border-radius: 16px; padding: 1.35rem;">
-              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5d7565; letter-spacing: 0.08em;">Duration & Schedule</div>
-              <div style="font-size: 1.45rem; font-weight: 700; color: #132418; margin: 0.35rem 0 0.2rem 0;">6 days, 5 nights</div>
-              <div class="lang-ja" style="font-size: 0.95rem; color: #24462c; font-weight: 600;">5 泊 6 日</div>
-            </div>
-
-            <div style="background: rgba(255,255,255,0.92); border: 1px solid rgba(19,36,24,0.09); border-radius: 16px; padding: 1.35rem;">
-              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5d7565; letter-spacing: 0.08em;">Osaka University Cohort</div>
-              <div style="font-size: 1.45rem; font-weight: 700; color: #132418; margin: 0.35rem 0 0.2rem 0;">12–16 Undergraduates</div>
-              <div class="lang-ja" style="font-size: 0.95rem; color: #24462c; font-weight: 600;">大阪大学の学部生 (12〜16名)</div>
-            </div>
-
-            <div style="background: rgba(255,255,255,0.92); border: 1px solid rgba(19,36,24,0.09); border-radius: 16px; padding: 1.35rem;">
-              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5d7565; letter-spacing: 0.08em;">Malaysian Peer Cohort</div>
-              <div style="font-size: 1.45rem; font-weight: 700; color: #132418; margin: 0.35rem 0 0.2rem 0;">4–6 IUC Peers</div>
-              <div class="lang-ja" style="font-size: 0.95rem; color: #24462c; font-weight: 600;">IUC の学生 (4〜6名)</div>
-            </div>
-
-            <div style="background: rgba(255,255,255,0.92); border: 1px solid rgba(19,36,24,0.09); border-radius: 16px; padding: 1.35rem;">
-              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5d7565; letter-spacing: 0.08em;">Collaborative Format</div>
-              <div style="font-size: 1.45rem; font-weight: 700; color: #132418; margin: 0.35rem 0 0.2rem 0;">Mixed Working Teams</div>
-              <div class="lang-ja" style="font-size: 0.95rem; color: #24462c; font-weight: 600;">混成チームで学びます</div>
-            </div>
-
-          </div>
-
-          <!-- Official Description & Coordination Quote -->
-          <div style="background: rgba(19,36,24,0.04); border-left: 4px solid #132418; border-radius: 0 16px 16px 0; padding: 1.5rem 2rem;">
-            <div class="lang-en">
-              <p style="font-size: 1.05rem; line-height: 1.6; color: #132418; margin-bottom: 0.75rem;">
-                <strong>Olympia Education</strong> would coordinate the programme, with <strong>Innovative University College (IUC)</strong> proposed as the Malaysian academic and campus host. Students from Osaka University and IUC will work in mixed teams across living laboratory environments.
-              </p>
-            </div>
-            <div class="lang-ja">
-              <p style="font-size: 1.05rem; line-height: 1.6; color: #132418; margin-bottom: 0.75rem;">
-                <strong>オリンピア・エデュケーション</strong>が運営を担当し、<strong>IUC</strong> をマレーシア側の受入校として提案しています。大阪大学と IUC の学生は混成チームで学びます。
-              </p>
-            </div>
-            <div style="margin-top: 1rem; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #5d7565;">
-              Prepared by: The Registrar / Olympia Education Malaysia
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 03: INTERACTIVE 6-DAY FIELD LEARNING STAGE
-         ====================================================================== -->
-    <section class="prog-section" id="section-03-itinerary" style="padding-top: 4rem;">
-      <div class="prog-container">
-        
-        <div class="exp-section-header">
-          <span class="exp-eyebrow">CURRICULUM & FIELDWORK ITINERARY</span>
-          <h2 class="exp-headline t-serif t-italic">Interactive 6-Day Field Learning Syllabus.</h2>
-          <p class="exp-subtext">
-            Explore the day-by-day curriculum prepared for the University of Osaka 2027 delegation. Use the language controls to view official Japanese curriculum notes and Rōmaji transliterations.
-          </p>
-        </div>
-
-        <!-- The Interactive Deck Container -->
-        <div class="prog-itinerary-deck">
-          
-          <!-- Top Bar: Day Selector + Language Mode Switcher -->
-          <div class="prog-itin-header-bar">
-            
-            <div class="prog-day-tabs" role="tablist">
-              <button class="prog-day-btn is-active" data-day="0" role="tab" aria-selected="true">
-                <span>Day 01</span>
-                <span class="prog-day-btn__sub">Arrival</span>
-              </button>
-              <button class="prog-day-btn" data-day="1" role="tab" aria-selected="false">
-                <span>Day 02</span>
-                <span class="prog-day-btn__sub">IUC · Putrajaya</span>
-              </button>
-              <button class="prog-day-btn" data-day="2" role="tab" aria-selected="false">
-                <span>Day 03</span>
-                <span class="prog-day-btn__sub">Petronas Towers</span>
-              </button>
-              <button class="prog-day-btn" data-day="3" role="tab" aria-selected="false">
-                <span>Day 04</span>
-                <span class="prog-day-btn__sub">Pineapple & Palm Oil</span>
-              </button>
-              <button class="prog-day-btn" data-day="4" role="tab" aria-selected="false">
-                <span>Day 05</span>
-                <span class="prog-day-btn__sub">UCAM Rubber</span>
-              </button>
-              <button class="prog-day-btn" data-day="5" role="tab" aria-selected="false">
-                <span>Day 06</span>
-                <span class="prog-day-btn__sub">IUC Capstone</span>
-              </button>
-            </div>
-
-            <!-- Global language switcher located in top header -->
-
-          </div>
-
-          <!-- The 6 Panes -->
-          <div class="prog-itin-stage">
-
-            <!-- PANE 1: DAY 1 -->
-            <div class="prog-day-pane is-active" data-pane="0">
-              <div class="prog-itin-visual">
-                <img src="/EduTourism2/wp-content/uploads/experiences/mflp_day_01.jpg" alt="Day 1 Arrival in Malaysia" class="prog-itin-visual__img">
-                <div class="prog-itin-visual__overlay">
-                  <span class="prog-itin-visual__badge">Orientation & Welcome</span>
-                  <div>
-                    <div class="prog-itin-visual__caption">Kuala Lumpur International Airport & Host Welcome</div>
-                    <div class="prog-itin-visual__meta">
-                      <span>📍 KLIA / Kuala Lumpur</span>
-                      <span>👥 Mixed Cohort Icebreaker</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="prog-itin-details">
-                <div>
-                  <div class="prog-itin-badge-row">
-                    <span class="prog-itin-day-label">Day 1 of 06 · Arrival & Orientation</span>
-                    <span class="prog-itin-japanese-tag lang-ja">1 日目 · マレーシア到着</span>
-                  </div>
-                  <h3 class="prog-itin-title t-serif">Arrival in Malaysia</h3>
-                  
-                  <div class="prog-itin-en-text" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
-                    Olympia Education and IUC welcome students and introduce the field learning programme.
-                  </div>
-
-                  <div class="prog-itin-bilingual-box">
-                    <div class="prog-itin-jp-text">
-                      オリンピアと IUC が学生を迎え、研修の概要を案内します。
-                    </div>
-                    <div class="prog-itin-romaji-text">
-                      Ichinichime · Marēshia tōchaku: Orinpia to IUC ga gakusei o mukae, kenshū no gaiyō o annai shimasu.
-                    </div>
-                  </div>
-
-                  <div class="prog-itin-timeline">
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Afternoon</span>
-                      <div class="prog-itin-time-desc">Arrival at KLIA, immigration reception, luggage transfer, and escort to hotel base in Greater Kuala Lumpur.</div>
-                    </div>
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Evening</span>
-                      <div class="prog-itin-time-desc">Welcome dinner, safety briefing by Olympia Education, and initial meet-and-greet with Malaysian student peers from IUC.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="prog-itin-output-box">
-                  <div class="prog-itin-output-box__title">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span>Day 1 Milestones</span>
-                  </div>
-                  <p class="prog-itin-output-box__desc">Formation of 4 cross-cultural mixed working teams, distribution of field research guides, and collaborative goal setting.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- PANE 2: DAY 2 -->
-            <div class="prog-day-pane" data-pane="1">
-              <div class="prog-itin-visual">
-                <img src="/EduTourism2/wp-content/uploads/programmes/mflp_day2_putrajaya.jpg" alt="Day 2 IUC and Putrajaya Waterfront" class="prog-itin-visual__img">
-                <div class="prog-itin-visual__overlay">
-                  <span class="prog-itin-visual__badge">Campus Orientation & Urban Planning</span>
-                  <div>
-                    <div class="prog-itin-visual__caption">IUC Campus Orientation & Putrajaya Waterfront</div>
-                    <div class="prog-itin-visual__meta">
-                      <span>📍 Innovative University College & Putrajaya</span>
-                      <span>🏛️ Wetland Ecology & Governance</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="prog-itin-details">
-                <div>
-                  <div class="prog-itin-badge-row">
-                    <span class="prog-itin-day-label">Day 2 of 06 · Campus & Urban Design</span>
-                    <span class="prog-itin-japanese-tag lang-ja">2 日目 · IUC・プトラジャヤ</span>
-                  </div>
-                  <h3 class="prog-itin-title t-serif">IUC and Putrajaya</h3>
-                  
-                  <div class="prog-itin-en-text" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
-                    Begin with campus orientation at IUC. Study urban planning around the Putrajaya waterfront.
-                  </div>
-
-                  <div class="prog-itin-bilingual-box">
-                    <div class="prog-itin-jp-text">
-                      IUC でオリエンテーションを行い、プトラジャヤの水辺で都市計画を学びます。
-                    </div>
-                    <div class="prog-itin-romaji-text">
-                      Futsukame · IUC · Putorajaya: IUC de orientēshon o okonai, Putorajaya no mizube de toshi keikaku o manabimasu.
-                    </div>
-                  </div>
-
-                  <div class="prog-itin-timeline">
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Morning</span>
-                      <div class="prog-itin-time-desc">Academic orientation at Innovative University College (IUC). Campus tour, library induction, and lecture on modern Malaysian governance.</div>
-                    </div>
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Afternoon</span>
-                      <div class="prog-itin-time-desc">Field study of Putrajaya waterfront master planning: lake ecosystem management, administrative architecture, and pedestrian accessibility.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="prog-itin-output-box">
-                  <div class="prog-itin-output-box__title">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span>Field Inquiry Focus</span>
-                  </div>
-                  <p class="prog-itin-output-box__desc">Mixed teams investigate how master-planned wetlands balance urban development with ecological conservation.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- PANE 3: DAY 3 -->
-            <div class="prog-day-pane" data-pane="2">
-              <div class="prog-itin-visual">
-                <img src="/EduTourism2/wp-content/uploads/programmes/mflp_day3_petronas.jpg" alt="Day 3 PETRONAS Twin Towers" class="prog-itin-visual__img">
-                <div class="prog-itin-visual__overlay">
-                  <span class="prog-itin-visual__badge">Megastructure & Engineering</span>
-                  <div>
-                    <div class="prog-itin-visual__caption">PETRONAS Twin Towers & High-Density Public Space</div>
-                    <div class="prog-itin-visual__meta">
-                      <span>📍 Kuala Lumpur City Centre (KLCC)</span>
-                      <span>🏗️ Skybridge Structural Dynamics</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="prog-itin-details">
-                <div>
-                  <div class="prog-itin-badge-row">
-                    <span class="prog-itin-day-label">Day 3 of 06 · Structural Engineering</span>
-                    <span class="prog-itin-japanese-tag lang-ja">3 日目 · ペトロナス・ツインタワー</span>
-                  </div>
-                  <h3 class="prog-itin-title t-serif">PETRONAS Twin Towers</h3>
-                  
-                  <div class="prog-itin-en-text" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
-                    Study the engineering of the Skybridge and the public space around the towers.
-                  </div>
-
-                  <div class="prog-itin-bilingual-box">
-                    <div class="prog-itin-jp-text">
-                      スカイブリッジの構造と公共空間を学びます。
-                    </div>
-                    <div class="prog-itin-romaji-text">
-                      Mikkame · Petoronasu Tsuin Tawā: Sukaiburijji no kōzō to kōkyō kūkan o manabimasu.
-                    </div>
-                  </div>
-
-                  <div class="prog-itin-timeline">
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Morning</span>
-                      <div class="prog-itin-time-desc">Skybridge technical briefing: dual-level floating bridge engineering, ball-and-socket wind sway compensation, and deep foundation engineering.</div>
-                    </div>
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Afternoon</span>
-                      <div class="prog-itin-time-desc">KLCC 50-acre public park investigation: human-centric urban space, transit connectivity, water features, and sustainable cooling design.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="prog-itin-output-box">
-                  <div class="prog-itin-output-box__title">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span><span class="lang-en">Fieldwork Output Commences</span><span class="lang-ja">研修の成果物作成開始</span></span>
-                  </div>
-                  <p class="prog-itin-output-box__desc">Each mixed team begins drafting their 1-page Field Brief, formulating one actionable urban planning recommendation.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- PANE 4: DAY 4 -->
-            <div class="prog-day-pane" data-pane="3">
-              <div class="prog-itin-visual">
-                <img src="/EduTourism2/wp-content/uploads/programmes/mflp_day4_pineapple.jpg" alt="Day 4 Sky Ladder Pineapple Farm & PKPKM Oil Palm" class="prog-itin-visual__img">
-                <div class="prog-itin-visual__overlay">
-                  <span class="prog-itin-visual__badge">Agro-Tourism & Commodity Agronomy</span>
-                  <div>
-                    <div class="prog-itin-visual__caption">Sky Ladder Pineapple Farm (Lukut) & PKPKM Smallholding</div>
-                    <div class="prog-itin-visual__meta">
-                      <span>📍 Lukut, Negeri Sembilan</span>
-                      <span>🍍 Agro-Tourism & Certified Palm Oil</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="prog-itin-details">
-                <div>
-                  <div class="prog-itin-badge-row">
-                    <span class="prog-itin-day-label">Day 4 of 06 · Agritech & Smallholders</span>
-                    <span class="prog-itin-japanese-tag lang-ja">4 日目 · スカイラダー・パイナップル農園</span>
-                  </div>
-                  <h3 class="prog-itin-title t-serif">Sky Ladder Pineapple Farm, Lukut</h3>
-                  
-                  <div class="prog-itin-en-text" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
-                    Study pineapple cultivation and farm tourism in the morning. Visit an oil palm smallholding with PKPKM in the afternoon.
-                  </div>
-
-                  <div class="prog-itin-bilingual-box">
-                    <div class="prog-itin-jp-text">
-                      午前はパイナップル栽培と農園観光を学びます。午後は PKPKM と小規模アブラヤシ農園へ。
-                    </div>
-                    <div class="prog-itin-romaji-text">
-                      Yokkame · Sukai Radā Painappuru Nōen (Rukutto): Gozen wa painappuru saibai to nōen kankō o manabimasu. Gogo wa PKPKM to shōkibo aburayashi nōen e.
-                    </div>
-                  </div>
-
-                  <div class="prog-itin-timeline">
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Morning</span>
-                      <div class="prog-itin-time-desc">Sky Ladder Farm in Lukut: cultivation cycles, value-added agro-products, agro-tourism operational models, and direct farmer-to-consumer sales.</div>
-                    </div>
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Afternoon</span>
-                      <div class="prog-itin-time-desc">Visit to certified smallholder oil palm farm in partnership with PKPKM (National Association of Smallholders): sustainable harvesting, yield optimization, and livelihood support.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="prog-itin-output-box">
-                  <div class="prog-itin-output-box__title">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span>Comparative Agritech Inquiry</span>
-                  </div>
-                  <p class="prog-itin-output-box__desc">Comparing cooperative structures between Japan (JA) and Malaysia (PKPKM) in balancing export crops with environmental sustainability.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- PANE 5: DAY 5 -->
-            <div class="prog-day-pane" data-pane="4">
-              <div class="prog-itin-visual">
-                <img src="/EduTourism2/wp-content/uploads/programmes/mflp_day5_rubber.jpg" alt="Day 5 UCAM Rubber Tapping" class="prog-itin-visual__img">
-                <div class="prog-itin-visual__overlay">
-                  <span class="prog-itin-visual__badge">Commodity Heritage & Agriscience</span>
-                  <div>
-                    <div class="prog-itin-visual__caption">University College of Agrotechnology Malaysia (UCAM)</div>
-                    <div class="prog-itin-visual__meta">
-                      <span>📍 Alor Gajah, Melaka</span>
-                      <span>🌳 Live Rubber Tapping & Agritech Transition</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="prog-itin-details">
-                <div>
-                  <div class="prog-itin-badge-row">
-                    <span class="prog-itin-day-label">Day 5 of 06 · Commodity History</span>
-                    <span class="prog-itin-japanese-tag lang-ja">5 日目 · UCAM（アロー・ガジャ）</span>
-                  </div>
-                  <h3 class="prog-itin-title t-serif">UCAM, Alor Gajah</h3>
-                  
-                  <div class="prog-itin-en-text" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
-                    See a rubber tapping demonstration and learn about the history and traditions of natural rubber cultivation.
-                  </div>
-
-                  <div class="prog-itin-bilingual-box">
-                    <div class="prog-itin-jp-text">
-                      ゴムの樹液採取の実演を見学し、天然ゴム栽培の歴史と伝統を学びます。
-                    </div>
-                    <div class="prog-itin-romaji-text">
-                      Itsukame · UCAM (Arō Gaja): Gomu no jueki saishu no jitsuen o kengaku shi, tennen gomu saibai no rekishi to dentō o manabimasu.
-                    </div>
-                  </div>
-
-                  <div class="prog-itin-timeline">
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Morning</span>
-                      <div class="prog-itin-time-desc">Live rubber tapping demonstration at UCAM plantation: bark excision angles, latex cup collection, chemical coagulation, and processing.</div>
-                    </div>
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Afternoon</span>
-                      <div class="prog-itin-time-desc">Seminar on the historical economic role of natural rubber in British Malaya and the current technological transition to automated tapping and clonal breeding.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="prog-itin-output-box">
-                  <div class="prog-itin-output-box__title">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span>Finalizing Deliverables</span>
-                  </div>
-                  <p class="prog-itin-output-box__desc">Teams finalize their slides, rehearse their 15-minute presentations, and print their 1-page Field Briefs for Day 6 evaluation.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- PANE 6: DAY 6 -->
-            <div class="prog-day-pane" data-pane="5">
-              <div class="prog-itin-visual">
-                <img src="/EduTourism2/wp-content/uploads/experiences/mflp_day_06.jpg" alt="Day 6 Presentations at IUC" class="prog-itin-visual__img">
-                <div class="prog-itin-visual__overlay">
-                  <span class="prog-itin-visual__badge">Capstone Evaluation & Departure</span>
-                  <div>
-                    <div class="prog-itin-visual__caption">Final Team Presentations at IUC & Academic Evaluation</div>
-                    <div class="prog-itin-visual__meta">
-                      <span>📍 IUC Main Campus Auditorium</span>
-                      <span>🎓 Joint Certificate Award & Departure</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="prog-itin-details">
-                <div>
-                  <div class="prog-itin-badge-row">
-                    <span class="prog-itin-day-label">Day 6 of 06 · Capstone Presentations</span>
-                    <span class="prog-itin-japanese-tag lang-ja">6 日目 · IUC で成果発表</span>
-                  </div>
-                  <h3 class="prog-itin-title t-serif">Presentations at IUC</h3>
-                  
-                  <div class="prog-itin-en-text" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
-                    Share team findings, receive feedback and depart Malaysia.
-                  </div>
-
-                  <div class="prog-itin-bilingual-box">
-                    <div class="prog-itin-jp-text">
-                      IUC で成果を発表し、講評を受けます。その後、マレーシアを出発します。
-                    </div>
-                    <div class="prog-itin-romaji-text">
-                      Muikame · IUC de seika happyō: IUC de seika o happyō shi, kōhyō o ukemasu. Sono ato, Marēshia o shuppatsu shimasu.
-                    </div>
-                  </div>
-
-                  <div class="prog-itin-timeline">
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Morning</span>
-                      <div class="prog-itin-time-desc">Official Capstone Presentation Session in the IUC Auditorium. 4 mixed teams present their field research briefs to an academic panel of IUC and Osaka faculty.</div>
-                    </div>
-                    <div class="prog-itin-time-node">
-                      <span class="prog-itin-time-tag">Afternoon</span>
-                      <div class="prog-itin-time-desc">Faculty feedback, award of official Completion Certificates, emotional farewell with IUC peer buddies, and transfer to KLIA for return flight.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="prog-itin-output-box">
-                  <div class="prog-itin-output-box__title">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span>Final Capstone Outcome</span>
-                  </div>
-                  <p class="prog-itin-output-box__desc">Submission of 4 completed 1-page Field Briefs + graduation certificates recognized towards academic field study credits.</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Bottom Controls Bar -->
-          <div class="prog-itin-controls-bar">
-            <div class="prog-itin-progress">
-              <span>Day <strong class="prog-itin-current-num">01</strong> of 06</span>
-              <div class="prog-itin-progress-bar-wrap">
-                <div class="prog-itin-progress-bar"></div>
-              </div>
-            </div>
-
-            <div class="prog-itin-nav-arrows">
-              <button class="prog-itin-arrow-btn js-prog-prev-day" aria-label="Previous day" data-cursor="hide">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-              </button>
-              <button class="prog-itin-arrow-btn js-prog-next-day" aria-label="Next day" data-cursor="hide">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 04: MIXED TEAMS COHORT ARCHITECTURE
-         ====================================================================== -->
-    <section class="prog-section" id="section-04-teams" style="padding-top: 4rem;">
-      <div class="prog-container">
-        
-        <div class="exp-section-header">
-          <span class="exp-eyebrow"><span class="lang-en">COHORT ARCHITECTURE</span><span class="lang-ja">混成チームの編成</span></span>
-          <h2 class="exp-headline t-serif t-italic">4 Interdisciplinary Mixed Working Teams.</h2>
-          <p class="exp-subtext">
-            Students from the University of Osaka and Innovative University College (IUC) are grouped into 4 collaborative field teams, fostering authentic cross-border collaboration and peer problem-solving.
-          </p>
-        </div>
-
-        <div class="prog-teams-grid">
-          
-          <!-- Team 1 -->
-          <div class="prog-team-card">
-            <div>
-              <span class="prog-team-card__badge">Team Alpha · Urban Systems</span>
-              <h3 class="prog-team-card__title">Putrajaya Waterfront & Sustainable Planning</h3>
-              <div class="prog-team-card__composition">
-                <span>🇯🇵 3–4 Osaka Undergraduates</span>
-                <span>🇲🇾 1–2 IUC Peer Mentors</span>
-                <span>🏛️ Putrajaya Master Plan & Wetlands</span>
-              </div>
-              <p class="prog-team-card__desc">
-                Investigating modern administrative capital design, natural lake ecology, and urban wetland water management.
-              </p>
-            </div>
-          </div>
-
-          <!-- Team 2 -->
-          <div class="prog-team-card">
-            <div>
-              <span class="prog-team-card__badge">Team Beta · Engineering</span>
-              <h3 class="prog-team-card__title">PETRONAS Towers & Public Realm Design</h3>
-              <div class="prog-team-card__composition">
-                <span>🇯🇵 3–4 Osaka Undergraduates</span>
-                <span>🇲🇾 1–2 IUC Peer Mentors</span>
-                <span>🏗️ Skybridge Dynamics & KLCC Park</span>
-              </div>
-              <p class="prog-team-card__desc">
-                Examining mega-tower structural mechanics, wind damper systems, and civic public space integration.
-              </p>
-            </div>
-          </div>
-
-          <!-- Team 3 -->
-          <div class="prog-team-card">
-            <div>
-              <span class="prog-team-card__badge">Team Gamma · Agritech</span>
-              <h3 class="prog-team-card__title">Pineapple Agro-Tourism & Circular Economy</h3>
-              <div class="prog-team-card__composition">
-                <span>🇯🇵 3–4 Osaka Undergraduates</span>
-                <span>🇲🇾 1–2 IUC Peer Mentors</span>
-                <span>🍍 Sky Ladder Lukut & PKPKM Cooperative</span>
-              </div>
-              <p class="prog-team-card__desc">
-                Analyzing tropical fruit agronomy, experiential farm tourism, and smallholder oil palm sustainable livelihoods.
-              </p>
-            </div>
-          </div>
-
-          <!-- Team 4 -->
-          <div class="prog-team-card">
-            <div>
-              <span class="prog-team-card__badge">Team Delta · Commodities</span>
-              <h3 class="prog-team-card__title">UCAM Natural Rubber & Agrarian Heritage</h3>
-              <div class="prog-team-card__composition">
-                <span>🇯🇵 3–4 Osaka Undergraduates</span>
-                <span>🇲🇾 1–2 IUC Peer Mentors</span>
-                <span>🌳 UCAM Live Tapping Demonstration</span>
-              </div>
-              <p class="prog-team-card__desc">
-                Studying commodity crop history, natural rubber polymer extraction, and technological modernization in plantation agriculture.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 05: FIELDWORK OUTPUTS (KENSHU NO SEIKABUTSU)
-         ====================================================================== -->
-    <section class="prog-section" id="section-05-outputs" style="padding-top: 4rem;">
-      <div class="prog-container">
-        
-        <div class="exp-section-header">
-          <span class="exp-eyebrow"><span class="lang-en">ACADEMIC DELIVERABLES</span><span class="lang-ja">研修の成果物</span></span>
-          <h2 class="exp-headline t-serif t-italic">Tangible Field Research Deliverables.</h2>
-          <p class="exp-subtext">
-            Each mixed team prepares structured academic outputs directly presented to and evaluated by faculty mentors at Innovative University College.
-          </p>
-        </div>
-
-        <div class="prog-outputs-grid">
-          
-          <!-- Deliverable 1 -->
-          <div class="prog-output-card">
-            <div>
-              <span class="prog-output-card__badge">DELIVERABLE 01</span>
-              <h3 class="prog-output-card__title">One-Page Field Brief</h3>
-              <div class="lang-ja" style="font-size: 0.95rem; color: #384c3e; margin-top: 0.5rem;">各チームは 1 ページの現地調査報告書をまとめます。</div>
-              <p style="font-size: 0.94rem; line-height: 1.6; color: #384c3e;">
-                A concise, publication-standard field brief synthesizing qualitative observations, empirical data, and comparative insights between Japanese and Malaysian practices.
-              </p>
-              <ul class="prog-output-card__list">
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-                  <span>Field observation evidence from Putrajaya, KLCC, Lukut or UCAM.</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-                  <span>Comparative analysis bridging Japanese theory with Malaysian reality.</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-                  <span>One concrete, actionable policy or technological recommendation.</span>
-                </li>
-              </ul>
-            </div>
-            <div style="background: rgba(19,36,24,0.05); padding: 0.85rem 1rem; border-radius: 12px; font-size: 0.82rem; color: #24462c;">
-              <strong>Format:</strong> Structured Executive Brief (Kaku chīmu wa ichi pēji no genchi chōsa hōkokusho)
-            </div>
-          </div>
-
-          <!-- Deliverable 2 -->
-          <div class="prog-output-card">
-            <div>
-              <span class="prog-output-card__badge">DELIVERABLE 02</span>
-              <h3 class="prog-output-card__title">Capstone Faculty Presentation</h3>
-              <div class="lang-ja" style="font-size: 0.95rem; color: #384c3e; margin-top: 0.5rem;">IUC で改善案を 1 つ発表します。</div>
-              <p style="font-size: 0.94rem; line-height: 1.6; color: #384c3e;">
-                A 15-minute bilingual presentation delivered by mixed student teams to a joint faculty panel at Innovative University College, defending their strategic recommendation.
-              </p>
-              <ul class="prog-output-card__list">
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-                  <span>Co-presented by Osaka undergraduates and IUC peer mentors.</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-                  <span>Q&A session with academic faculty on feasibility and sustainability.</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-                  <span>Formal evaluation and issuance of verified Completion Certificates.</span>
-                </li>
-              </ul>
-            </div>
-            <div style="background: rgba(19,36,24,0.05); padding: 0.85rem 1rem; border-radius: 12px; font-size: 0.82rem; color: #24462c;">
-              <strong>Venue:</strong> IUC Campus Auditorium · Evaluated by Joint Academic Jury
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 06: BILATERAL COLLABORATION FRAMEWORK
-         ====================================================================== -->
-    <section class="prog-section" id="section-06-collaboration" style="padding-top: 4rem;">
-      <div class="prog-container">
-        
-        <div class="exp-section-header">
-          <span class="exp-eyebrow"><span class="lang-en">INSTITUTIONAL PARTNERSHIP</span><span class="lang-ja">連携体制</span></span>
-          <h2 class="exp-headline t-serif t-italic">Three-Pillar Bilateral Governance.</h2>
-          <p class="exp-subtext">
-            A cohesive collaboration connecting programme coordination, Malaysian university hosting, and international university academic oversight.
-          </p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem;">
-          
-          <div style="background: rgba(255,255,255,0.78); border: 1px solid rgba(19,36,24,0.1); border-radius: 20px; padding: 2rem;">
-            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5d7565; letter-spacing: 0.08em; margin-bottom: 0.5rem;">Programme Coordination</div>
-            <h3 style="font-size: 1.35rem; font-weight: 700; color: #132418; margin-bottom: 0.75rem;">Olympia Education Malaysia</h3>
-            <p style="font-size: 0.9rem; line-height: 1.55; color: #384c3e;">
-              Acts as the central programme director and registrar. Oversees comprehensive logistics, safety protocols, transport, insurance, industry liaisons, and cultural protocol.
-            </p>
-          </div>
-
-          <div style="background: rgba(255,255,255,0.78); border: 1px solid rgba(19,36,24,0.1); border-radius: 20px; padding: 2rem;">
-            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5d7565; letter-spacing: 0.08em; margin-bottom: 0.5rem;">Malaysian Academic Host</div>
-            <h3 style="font-size: 1.35rem; font-weight: 700; color: #132418; margin-bottom: 0.75rem;">Innovative University College (IUC)</h3>
-            <p style="font-size: 0.9rem; line-height: 1.55; color: #384c3e;">
-              Serves as the official campus and academic host in Malaysia. Provides lecture facilities, orientation, Malaysian peer mentors, faculty evaluation, and joint academic certification.
-            </p>
-          </div>
-
-          <div style="background: rgba(255,255,255,0.78); border: 1px solid rgba(19,36,24,0.1); border-radius: 20px; padding: 2rem;">
-            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5d7565; letter-spacing: 0.08em; margin-bottom: 0.5rem;">Academic Partner</div>
-            <h3 style="font-size: 1.35rem; font-weight: 700; color: #132418; margin-bottom: 0.75rem;">University of Osaka (Proposed 2027)</h3>
-            <p style="font-size: 0.9rem; line-height: 1.55; color: #384c3e;">
-              <span class="lang-en">Academic consultation led by <strong>Prof. Yoshinori Sumimura</strong> focusing on curriculum alignment, student recruitment, credit transfer, and official university liaison.</span><span class="lang-ja">カリキュラム適合、学生募集、単位認定、および大学間連携を中心とした<strong>住村欣範教授</strong>との学術相談。</span>
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 07: CUSTOM FIELD MOBILITY DOMAINS (FOR OTHER INSTITUTIONS)
-         ====================================================================== -->
-    <section class="prog-section" id="section-07-domains" style="padding-top: 4rem;">
-      <div class="prog-container">
-        
-        <div class="exp-section-header">
-          <span class="exp-eyebrow">CUSTOM MOBILITY PROGRAMMES</span>
-          <h2 class="exp-headline t-serif t-italic">Designed for Global Learning Communities.</h2>
-          <p class="exp-subtext">
-            Beyond our Osaka University pilot, Olympia EduTourism tailors bespoke 5-day to 14-day field learning delegations for universities, polytechnics, and schools worldwide across 5 core domains.
-          </p>
-        </div>
-
-        <div class="prog-grid-5">
-          
-          <div class="exp-stage-card">
-            <div class="exp-stage-card__number">01</div>
-            <div class="exp-stage-card__image-wrap">
-              <img src="/EduTourism2/wp-content/uploads/experiences/dest_01_cities.jpg" alt="Urban Governance" class="exp-stage-card__img">
-              <div class="exp-stage-card__badge">DOMAIN 01</div>
-            </div>
-            <div class="exp-stage-card__content">
-              <h3 class="exp-stage-card__title">Urban Governance & Engineering</h3>
-              <p class="exp-stage-card__tagline">Smart cities & structural systems.</p>
-              <p class="exp-stage-card__desc">Putrajaya waterfront planning, LRT/MRT transit engineering, and Kuala Lumpur high-density infrastructure.</p>
-            </div>
-          </div>
-
-          <div class="exp-stage-card">
-            <div class="exp-stage-card__number">02</div>
-            <div class="exp-stage-card__image-wrap">
-              <img src="/EduTourism2/wp-content/uploads/experiences/dest_04_agriculture.jpg" alt="Agritech & Commodities" class="exp-stage-card__img">
-              <div class="exp-stage-card__badge">DOMAIN 02</div>
-            </div>
-            <div class="exp-stage-card__content">
-              <h3 class="exp-stage-card__title">Sustainable Agriculture & Agritech</h3>
-              <p class="exp-stage-card__tagline">Food security & plantation crops.</p>
-              <p class="exp-stage-card__desc">Pineapple agronomy, sustainable smallholder oil palm with PKPKM, and natural rubber research with UCAM.</p>
-            </div>
-          </div>
-
-          <div class="exp-stage-card">
-            <div class="exp-stage-card__number">03</div>
-            <div class="exp-stage-card__image-wrap">
-              <img src="/EduTourism2/wp-content/uploads/experiences/dest_02_heritage.jpg" alt="Living Heritage" class="exp-stage-card__img">
-              <div class="exp-stage-card__badge">DOMAIN 03</div>
-            </div>
-            <div class="exp-stage-card__content">
-              <h3 class="exp-stage-card__title">Living Heritage & Co-Creation</h3>
-              <p class="exp-stage-card__tagline">Multicultural communities & arts.</p>
-              <p class="exp-stage-card__desc">Historical conservation in Melaka and Penang, indigenous craftsmanship, and communal storytelling.</p>
-            </div>
-          </div>
-
-          <div class="exp-stage-card">
-            <div class="exp-stage-card__number">04</div>
-            <div class="exp-stage-card__image-wrap">
-              <img src="/EduTourism2/wp-content/uploads/experiences/dest_03_nature.jpg" alt="Biodiversity" class="exp-stage-card__img">
-              <div class="exp-stage-card__badge">DOMAIN 04</div>
-            </div>
-            <div class="exp-stage-card__content">
-              <h3 class="exp-stage-card__title">Ecology & Conservation</h3>
-              <p class="exp-stage-card__tagline">Rainforest & marine ecosystems.</p>
-              <p class="exp-stage-card__desc">Tropical biodiversity surveys, mangrove wetland protection, and coral reef conservation science.</p>
-            </div>
-          </div>
-
-          <div class="exp-stage-card">
-            <div class="exp-stage-card__number">05</div>
-            <div class="exp-stage-card__image-wrap">
-              <img src="/EduTourism2/wp-content/uploads/experiences/05_industry_learning.jpg" alt="Global Business" class="exp-stage-card__img">
-              <div class="exp-stage-card__badge">DOMAIN 05</div>
-            </div>
-            <div class="exp-stage-card__content">
-              <h3 class="exp-stage-card__title">ASEAN Business & Halal Economy</h3>
-              <p class="exp-stage-card__tagline">Cross-border enterprise & ESG.</p>
-              <p class="exp-stage-card__desc">Islamic finance governance, multinational headquarters briefings, and trade corridor dynamics.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 08: FAQ ACCORDION
-         ====================================================================== -->
-    <section class="prog-section" id="section-08-faq" style="padding-top: 4rem;">
-      <div class="prog-container" style="max-width: 900px;">
-        
-        <div class="exp-section-header">
-          <span class="exp-eyebrow">COMMON QUESTIONS</span>
-          <h2 class="exp-headline t-serif t-italic">Things You May Want to Know.</h2>
-          <p class="exp-subtext">Everything you need to know about academic hosting, safety, language, and curriculum alignment.</p>
-        </div>
-
-        <div class="prog-faq-list">
-          
-          <div class="prog-faq-item">
-            <button class="prog-faq-trigger" aria-expanded="false">
-              <span>What is the role of Innovative University College (IUC) in the programme?</span>
-              <svg class="prog-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="prog-faq-content">
-              <div class="prog-faq-body">
-                IUC acts as the official Malaysian academic and campus host. They provide lecture rooms, library access, faculty mentorship, recruit the 4–6 Malaysian peer student cohort, co-evaluate the Day 6 presentations, and co-issue the official academic Certificates of Completion.
-              </div>
-            </div>
-          </div>
-
-          <div class="prog-faq-item">
-            <button class="prog-faq-trigger" aria-expanded="false">
-              <span>What language is used for lectures, field study, and presentations?</span>
-              <svg class="prog-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="prog-faq-content">
-              <div class="prog-faq-body">
-                The primary medium of instruction and presentation is English. In mixed working teams, IUC student peers facilitate language bridging and cultural translation, ensuring that Osaka undergraduates feel fully confident and supported during interviews and site investigations.
-              </div>
-            </div>
-          </div>
-
-          <div class="prog-faq-item">
-            <button class="prog-faq-trigger" aria-expanded="false">
-              <span>Can the 6-day itinerary be tailored for other international faculties?</span>
-              <svg class="prog-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="prog-faq-content">
-              <div class="prog-faq-body">
-                Yes. While the Osaka 2027 pilot focuses on urban planning, engineering, and agritech commodity ecosystems, Olympia EduTourism customizes academic learning objectives, cohort sizes (from 10 to 60 students), and durations (5 to 14 days) to fit your university's specific syllabus and credit requirements.
-              </div>
-            </div>
-          </div>
-
-          <div class="prog-faq-item">
-            <button class="prog-faq-trigger" aria-expanded="false">
-              <span>How are student safety, medical coverage, and transport managed?</span>
-              <svg class="prog-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="prog-faq-content">
-              <div class="prog-faq-body">
-                Olympia Education Malaysia oversees comprehensive risk management. We provide dedicated private tour coaches with licensed drivers, 24/7 bilingual on-ground chaperones, comprehensive group travel insurance, vetted twin-share hotel accommodation, and emergency medical protocols.
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 09: CONSULTATION & PROPOSAL INQUIRY
-         ====================================================================== -->
-    <section class="prog-section" id="section-09-consultation" style="padding-top: 4rem; padding-bottom: 6rem;">
-      <div class="prog-container" style="max-width: 960px;">
-        
-        <div style="background: rgba(255, 255, 255, 0.88); border: 1px solid rgba(19, 36, 24, 0.12); border-radius: 28px; padding: 3rem 2.5rem; box-shadow: 0 16px 45px rgba(19, 36, 24, 0.08); backdrop-filter: blur(16px);">
-          <div style="text-align: center; max-width: 650px; margin: 0 auto 2.5rem auto;">
-            <span class="exp-eyebrow">ACADEMIC CONSULTATION · 2026/2027</span>
-            <h2 class="exp-headline t-serif t-italic" style="font-size: clamp(2rem, 3.2vw, 2.7rem); color: #132418; margin: 0.5rem 0;">
-              Initiate a Programme Dialogue.
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 02: FLAGSHIP PROGRAMME OVERVIEW (OSAKA 2027 PILOT)
+       ====================================================================== -->
+  <section class="prog-section" id="section-02-flagship" style="padding-top: 4rem;">
+    <div class="prog-container">
+      
+      <div class="exp-mflp-card" style="background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(19,36,24,0.12); border-radius: 28px; padding: 3rem; box-shadow: 0 16px 45px rgba(19,36,24,0.08); backdrop-filter: blur(12px);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
+          <div>
+            <span class="exp-eyebrow" style="color: #24462c;">
+              <span class="lang-en">FEATURED FLAGSHIP PROGRAMME</span>
+              <span class="lang-ja">重点フラッグシッププログラム</span>
+            </span>
+            <h2 class="exp-mflp-title t-serif" style="font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.15; color: #132418; margin: 0.4rem 0;">
+              <span class="lang-en">Malaysia Field Learning Programme 2027</span>
+              <span class="lang-ja">マレーシア現地研修プログラム 2027</span>
             </h2>
-            <p style="font-size: 0.98rem; line-height: 1.6; color: #384c3e;">
-              Whether planning participation in the Osaka University 2027 pilot or requesting a customized field study proposal for your faculty, our registrar will respond within 48 hours.
-            </p>
+            <div class="lang-en" style="font-size: 0.95rem; color: #5d7565; margin-top: 0.25rem; font-style: italic;">
+              Proposed 2027 Pilot for the University of Osaka, Japan
+            </div>
+            <div class="lang-ja" style="font-size: 1.05rem; font-weight: 600; color: #24462c; margin-top: 0.2rem;">
+              大阪大学向け 2027年試行実施案（マレーシア・クアラルンプール近郊）
+            </div>
           </div>
 
-          <form action="/EduTourism2/programmes/consultation" method="POST">
-            <input type="hidden" name="_token" value="ihA84vHTJ4DWQg238EZqadtMbf15sksDjf6nCFub" autocomplete="off"> style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-              <label style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #132418;">Contact Name *</label>
-              <input type="text" placeholder="e.g. Prof. Yoshinori Sumimura / Dean / Coordinator" required style="background: #ffffff; border: 1px solid rgba(19,36,24,0.18); border-radius: 12px; padding: 0.85rem 1rem; font-size: 0.92rem; color: #132418; font-family: inherit;">
+          <div style="display: flex; gap: 1rem; align-items: center; background: rgba(19,36,24,0.05); padding: 0.85rem 1.35rem; border-radius: 16px;">
+            <div style="text-align: right;">
+              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #5d7565;">
+                <span class="lang-en">Academic Consultation</span>
+                <span class="lang-ja">学術意見交換</span>
+              </div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: #132418;">Prof. Yoshinori Sumimura</div>
+              <div style="font-size: 0.8rem; color: #384c3e;">住村欣範教授（大阪大学）</div>
             </div>
+          </div>
+        </div>
 
-            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-              <label style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #132418;">Official Email *</label>
-              <input type="email" placeholder="e.g. contact@osaka-u.ac.jp" required style="background: #ffffff; border: 1px solid rgba(19,36,24,0.18); border-radius: 12px; padding: 0.85rem 1rem; font-size: 0.92rem; color: #132418; font-family: inherit;">
+        <!-- Metrics Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
+          <div style="background: rgba(255,255,255,0.92); border: 1px solid rgba(19,36,24,0.09); border-radius: 16px; padding: 1.35rem;">
+            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5d7565; letter-spacing: 0.08em;">
+              <span class="lang-en">Duration</span>
+              <span class="lang-ja">期間・日程</span>
             </div>
+            <div style="font-size: 1.5rem; font-weight: 700; color: #132418; margin: 0.25rem 0;">
+              <span class="lang-en">6 Days / 5 Nights</span>
+              <span class="lang-ja">6日間 (5泊6日)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: #5d7565;">
+              <span class="lang-en">Proposed Target: 2027</span>
+              <span class="lang-ja">実施想定時期: 2027年</span>
+            </div>
+          </div>
 
-            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-              <label style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #132418;">Institution / University *</label>
-              <input type="text" placeholder="e.g. University of Osaka" required style="background: #ffffff; border: 1px solid rgba(19,36,24,0.18); border-radius: 12px; padding: 0.85rem 1rem; font-size: 0.92rem; color: #132418; font-family: inherit;">
+          <div style="background: rgba(255,255,255,0.92); border: 1px solid rgba(19,36,24,0.09); border-radius: 16px; padding: 1.35rem;">
+            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5d7565; letter-spacing: 0.08em;">
+              <span class="lang-en">Osaka Cohort</span>
+              <span class="lang-ja">大阪大学参加規模</span>
             </div>
+            <div style="font-size: 1.5rem; font-weight: 700; color: #132418; margin: 0.25rem 0;">
+              <span class="lang-en">12–16 Students</span>
+              <span class="lang-ja">学部生 12〜16名</span>
+            </div>
+            <div style="font-size: 0.82rem; color: #5d7565;">
+              <span class="lang-en">Interdisciplinary Selection</span>
+              <span class="lang-ja">文理横断・学部不問</span>
+            </div>
+          </div>
 
-            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-              <label style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #132418;">Programme of Interest *</label>
-              <select style="background: #ffffff; border: 1px solid rgba(19,36,24,0.18); border-radius: 12px; padding: 0.85rem 1rem; font-size: 0.92rem; color: #132418; font-family: inherit;">
-                <option value="mflp-2027">Malaysia Field Learning Programme (Osaka 2027 Pilot)</option>
-                <option value="custom-urban">Custom Track: Urban Governance & Engineering</option>
-                <option value="custom-agritech">Custom Track: Sustainable Agritech & Food Security</option>
-                <option value="custom-heritage">Custom Track: Cultural Heritage & Co-Creation</option>
-                <option value="custom-ecology">Custom Track: Tropical Biodiversity & Marine Ecology</option>
-                <option value="custom-other">Other Custom Academic Mobility Programme</option>
-              </select>
+          <div style="background: rgba(255,255,255,0.92); border: 1px solid rgba(19,36,24,0.09); border-radius: 16px; padding: 1.35rem;">
+            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5d7565; letter-spacing: 0.08em;">
+              <span class="lang-en">Local Peers (IUC)</span>
+              <span class="lang-ja">マレーシア現地学生</span>
             </div>
+            <div style="font-size: 1.5rem; font-weight: 700; color: #132418; margin: 0.25rem 0;">
+              <span class="lang-en">4–6 Students</span>
+              <span class="lang-ja">IUC学生 4〜6名</span>
+            </div>
+            <div style="font-size: 0.82rem; color: #5d7565;">
+              <span class="lang-en">Peer Team Integration</span>
+              <span class="lang-ja">各混成チームに1〜2名配置</span>
+            </div>
+          </div>
 
-            <div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 0.4rem;">
-              <label style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #132418;">Cohort Estimates & Academic Objectives</label>
-              <textarea rows="4" placeholder="Expected number of students, proposed dates in 2026/2027, academic credits, or specific fieldwork sites required..." style="background: #ffffff; border: 1px solid rgba(19,36,24,0.18); border-radius: 12px; padding: 0.85rem 1rem; font-size: 0.92rem; color: #132418; font-family: inherit; resize: vertical;"></textarea>
+          <div style="background: rgba(255,255,255,0.92); border: 1px solid rgba(19,36,24,0.09); border-radius: 16px; padding: 1.35rem;">
+            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #5d7565; letter-spacing: 0.08em;">
+              <span class="lang-en">Host &amp; Coordinator</span>
+              <span class="lang-ja">実施・運営体制</span>
             </div>
+            <div style="font-size: 1.5rem; font-weight: 700; color: #132418; margin: 0.25rem 0;">Olympia &amp; IUC</div>
+            <div style="font-size: 0.82rem; color: #5d7565;">
+              <span class="lang-en">Bilateral Academic Host</span>
+              <span class="lang-ja">日馬共同アカデミック連携</span>
+            </div>
+          </div>
+        </div>
 
-            <div style="grid-column: 1 / -1; text-align: center; margin-top: 0.75rem;">
-              <button type="submit" class="exp-next-section-btn" data-cursor="hide" style="display: inline-flex; width: auto; padding: 0.85rem 2.5rem; font-size: 0.95rem; cursor: pointer;">
-                <span>Submit Academic Consultation Request</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
+        <!-- Description Box -->
+        <div style="background: rgba(19,36,24,0.04); border-left: 4px solid #132418; border-radius: 0 16px 16px 0; padding: 1.5rem 2rem;">
+          <div class="lang-en">
+            <p style="font-size: 1.05rem; line-height: 1.6; color: #132418; margin-bottom: 0.75rem;">
+              <strong>Olympia Education</strong> coordinates the overall programme, with <strong>Innovative University College (IUC)</strong> serving as the Malaysian campus and academic host. Students from Osaka University and IUC collaborate in mixed teams across living laboratory environments.
+            </p>
+            <div style="font-size: 0.88rem; color: #5d7565;">
+              ✦ Note: This document outlines an academic pilot proposal subject to mutual faculty discussion and formal institutional confirmation.
             </div>
-          </form>
+          </div>
+          <div class="lang-ja">
+            <p style="font-size: 1.05rem; line-height: 1.6; color: #132418; margin-bottom: 0.75rem;">
+              本プログラムは<strong>オリンピア・エデュケーション</strong>が全体統括・現地運営を担当し、マレーシア側の大学受入機関として<strong>イノベーティブ・ユニバーシティ・カレッジ（IUC）</strong>が協力します。大阪大学とIUCの学生が混成チームを組み、実際の都市・産業現場で課題解決型フィールドワークを行います。
+            </p>
+            <div style="font-size: 0.88rem; color: #5d7565;">
+              ✦ 備考: 本提案は意見交換のための試行実施案であり、両大学間の正式な学術協議および承認を経て確定されます。
+            </div>
+          </div>
         </div>
 
       </div>
-    </section>
 
-  </main>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 03: INTERACTIVE 6-DAY ITINERARY
+       ====================================================================== -->
+  <section class="prog-section" id="section-03-itinerary" style="padding-top: 4rem;">
+    <div class="prog-container">
+      
+      <div class="exp-section-header">
+        <span class="exp-eyebrow">
+          <span class="lang-en">CURRICULUM &amp; FIELDWORK ITINERARY</span>
+          <span class="lang-ja">カリキュラム＆現地研修日程</span>
+        </span>
+        <h2 class="exp-headline t-serif t-italic">
+          <span class="lang-en">Interactive 6-Day Field Learning Syllabus.</span>
+          <span class="lang-ja">6日間の実践的フィールドワーク・シラバス</span>
+        </h2>
+        <p class="exp-subtext">
+          <span class="lang-en">Select any day to inspect the field learning modules, site visits, and daily research milestones.</span>
+          <span class="lang-ja">日別のタブを選択すると、訪問先、現地調査モジュール、および成果物の進捗を確認できます。</span>
+        </p>
+      </div>
+
+      <div class="prog-itin-wrapper">
+        <div class="prog-itin-nav-bar">
+          <div class="prog-itin-day-selector" role="tablist">
+            <button class="prog-day-btn is-active" data-day="0" role="tab" aria-selected="true">
+              <span>Day 01</span>
+              <span class="prog-day-btn__sub">
+                <span class="lang-en">Arrival &amp; Welcome</span>
+                <span class="lang-ja">到着・歓迎</span>
+              </span>
+            </button>
+            <button class="prog-day-btn" data-day="1" role="tab" aria-selected="false">
+              <span>Day 02</span>
+              <span class="prog-day-btn__sub">
+                <span class="lang-en">IUC · Putrajaya</span>
+                <span class="lang-ja">IUC大学・プトラジャヤ</span>
+              </span>
+            </button>
+            <button class="prog-day-btn" data-day="2" role="tab" aria-selected="false">
+              <span>Day 03</span>
+              <span class="prog-day-btn__sub">
+                <span class="lang-en">Petronas Towers</span>
+                <span class="lang-ja">ツインタワー・大都市</span>
+              </span>
+            </button>
+            <button class="prog-day-btn" data-day="3" role="tab" aria-selected="false">
+              <span>Day 04</span>
+              <span class="prog-day-btn__sub">
+                <span class="lang-en">Agritech &amp; Halal</span>
+                <span class="lang-ja">先端農園・ハラール食農</span>
+              </span>
+            </button>
+            <button class="prog-day-btn" data-day="4" role="tab" aria-selected="false">
+              <span>Day 05</span>
+              <span class="prog-day-btn__sub">
+                <span class="lang-en">Rubber &amp; Port Klang</span>
+                <span class="lang-ja">天然ゴム・港湾物流</span>
+              </span>
+            </button>
+            <button class="prog-day-btn" data-day="5" role="tab" aria-selected="false">
+              <span>Day 06</span>
+              <span class="prog-day-btn__sub">
+                <span class="lang-en">Colloquium &amp; Cert</span>
+                <span class="lang-ja">学術成果発表・修了式</span>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- The 6 Panes -->
+        <div class="prog-itin-stage">
+
+          <!-- PANE 1: DAY 1 -->
+          <div class="prog-day-pane is-active" data-pane="0">
+            <div class="prog-itin-visual">
+              <img src="/EduTourism2/wp-content/uploads/experiences/mflp_day_01.jpg" alt="Day 1 Arrival in Malaysia" class="prog-itin-visual__img">
+              <div class="prog-itin-visual__overlay">
+                <span class="prog-itin-visual__badge">
+                  <span class="lang-en">Orientation &amp; Welcome</span>
+                  <span class="lang-ja">到着とオリエンテーション</span>
+                </span>
+                <div>
+                  <div class="prog-itin-visual__caption">
+                    <span class="lang-en">Kuala Lumpur International Airport &amp; Welcome Reception</span>
+                    <span class="lang-ja">クアラルンプール国際空港到着・歓迎レセプション</span>
+                  </div>
+                  <div class="prog-itin-visual__meta">
+                    <span>📍 KLIA / Kuala Lumpur</span>
+                    <span class="lang-en">👥 Mixed Cohort Icebreaker</span>
+                    <span class="lang-ja">👥 日馬バディ交流会</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog-itin-details">
+              <div>
+                <div class="prog-itin-badge-row">
+                  <span class="prog-itin-day-label">
+                    <span class="lang-en">Day 1 of 06 · Arrival &amp; Orientation</span>
+                    <span class="lang-ja">第1日 · マレーシア到着とオリエンテーション</span>
+                  </span>
+                </div>
+                <h3 class="prog-itin-title t-serif">
+                  <span class="lang-en">Arrival in Malaysia &amp; Cross-Cultural Inception</span>
+                  <span class="lang-ja">マレーシア到着・開講オリエンテーション</span>
+                </h3>
+                
+                <div class="lang-en" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  Olympia Education and IUC reception teams welcome students to Malaysia and conduct the field learning introduction.
+                </div>
+                <div class="lang-ja" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  オリンピアとIUCのスタッフが学生を迎え、研修全体の安全指導およびプログラム概要を案内します。
+                </div>
+
+                <div class="prog-itin-timeline">
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Afternoon</span><span class="lang-ja">午後</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">Arrival at KLIA, immigration reception, luggage transfer, and escort to hotel base in Greater Kuala Lumpur.</span>
+                      <span class="lang-ja">KLIA空港到着、入国手続き、専用車によるホテルへの移動・チェックイン。</span>
+                    </div>
+                  </div>
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Evening</span><span class="lang-ja">夕方</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">Welcome dinner, safety briefing by Olympia Education, and initial meet-and-greet with Malaysian student peers from IUC.</span>
+                      <span class="lang-ja">歓迎夕食会、安全ブリーフィング、およびIUCマレーシア学生バディとの顔合わせ交流会。</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="prog-itin-output-box">
+                <div class="prog-itin-output-box__title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>
+                    <span class="lang-en">Daily Milestone</span>
+                    <span class="lang-ja">当日の到達目標</span>
+                  </span>
+                </div>
+                <p class="prog-itin-output-box__desc">
+                  <span class="lang-en">Smooth cohort transition, peer buddy pairing, and complete briefing on academic evaluation criteria.</span>
+                  <span class="lang-ja">円滑な入国移動、日馬学生バディのペアリング、および研修評価基準の共有。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 2: DAY 2 -->
+          <div class="prog-day-pane" data-pane="1">
+            <div class="prog-itin-visual">
+              <img src="/EduTourism2/wp-content/uploads/programmes/mflp_day2_putrajaya.jpg" alt="Day 2 Putrajaya Administration" class="prog-itin-visual__img">
+              <div class="prog-itin-visual__overlay">
+                <span class="prog-itin-visual__badge">
+                  <span class="lang-en">Urban Governance</span>
+                  <span class="lang-ja">都市ガバナンス</span>
+                </span>
+                <div>
+                  <div class="prog-itin-visual__caption">
+                    <span class="lang-en">IUC Campus Inception &amp; Putrajaya Federal Capital</span>
+                    <span class="lang-ja">IUC大学開講式・プトラジャヤ連邦行政都市視察</span>
+                  </div>
+                  <div class="prog-itin-visual__meta">
+                    <span>📍 Putrajaya / IUC Campus</span>
+                    <span class="lang-en">🏛️ Smart City Infrastructure</span>
+                    <span class="lang-ja">🏛️ スマート都市インフラ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog-itin-details">
+              <div>
+                <div class="prog-itin-badge-row">
+                  <span class="prog-itin-day-label">
+                    <span class="lang-en">Day 2 of 06 · Planned Capital</span>
+                    <span class="lang-ja">第2日 · 計画行政都市と環境共生</span>
+                  </span>
+                </div>
+                <h3 class="prog-itin-title t-serif">
+                  <span class="lang-en">IUC Campus Visit &amp; Planned City Exploration</span>
+                  <span class="lang-ja">IUC大学キャンパス訪問・プトラジャヤ視察</span>
+                </h3>
+                
+                <div class="lang-en" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  Opening symposium at IUC campus followed by a field investigation into Putrajaya's planned administrative capital.
+                </div>
+                <div class="lang-ja" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  IUCキャンパスでの開講記念シンポジウム後、プトラジャヤの計画的連邦行政都市と水質浄化湿地帯を調査します。
+                </div>
+
+                <div class="prog-itin-timeline">
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Morning</span><span class="lang-ja">午前</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">Welcome ceremony at IUC campus, academic keynote lectures on Malaysian society, and team room setup.</span>
+                      <span class="lang-ja">IUCキャンパスでの開講式、マレーシア社会構造に関する基調講義、および混成チーム編成。</span>
+                    </div>
+                  </div>
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Afternoon</span><span class="lang-ja">午後</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">Field observation of Putrajaya master planning, Islamic-modernist architecture, and artificial wetland ecology.</span>
+                      <span class="lang-ja">プトラジャヤ都市マスタープラン、イスラム現代建築、人工湿地帯による環境共生システムの現地調査。</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="prog-itin-output-box">
+                <div class="prog-itin-output-box__title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>
+                    <span class="lang-en">Field Research Brief Commences</span>
+                    <span class="lang-ja">調査概要書の作成開始</span>
+                  </span>
+                </div>
+                <p class="prog-itin-output-box__desc">
+                  <span class="lang-en">Each mixed team outlines their 1-page Field Brief, formulating actionable urban governance insights.</span>
+                  <span class="lang-ja">各混成チームが1ページのフィールドリサーチ・ブリーフの草案に着手し、都市政策の課題を抽出します。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 3: DAY 3 -->
+          <div class="prog-day-pane" data-pane="2">
+            <div class="prog-itin-visual">
+              <img src="/EduTourism2/wp-content/uploads/programmes/mflp_day3_petronas.jpg" alt="Day 3 Petronas Towers" class="prog-itin-visual__img">
+              <div class="prog-itin-visual__overlay">
+                <span class="prog-itin-visual__badge">
+                  <span class="lang-en">Commercial Hub</span>
+                  <span class="lang-ja">大都市経済ハブ</span>
+                </span>
+                <div>
+                  <div class="prog-itin-visual__caption">
+                    <span class="lang-en">PETRONAS Twin Towers &amp; KL Central Business District</span>
+                    <span class="lang-ja">ペトロナスツインタワー・大都市商業エリア</span>
+                  </div>
+                  <div class="prog-itin-visual__meta">
+                    <span>📍 Kuala Lumpur CBD</span>
+                    <span class="lang-en">🏙️ Engineering &amp; Modernity</span>
+                    <span class="lang-ja">🏙️ 先端建築と公共交通</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog-itin-details">
+              <div>
+                <div class="prog-itin-badge-row">
+                  <span class="prog-itin-day-label">
+                    <span class="lang-en">Day 3 of 06 · Metropolitan Hub</span>
+                    <span class="lang-ja">第3日 · 大都市圏の経済と交通</span>
+                  </span>
+                </div>
+                <h3 class="prog-itin-title t-serif">
+                  <span class="lang-en">Kuala Lumpur Metropolitan Study</span>
+                  <span class="lang-ja">クアラルンプール大都市圏の調査</span>
+                </h3>
+                
+                <div class="lang-en" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  Field examination of high-density urban engineering, transit-oriented development, and multinational corporate ecosystems.
+                </div>
+                <div class="lang-ja" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  ペトロナスツインタワーの建築構造、クアラルンプールの鉄道公共交通網（MRT/LRT）、および国際ビジネス環境の調査。
+                </div>
+
+                <div class="prog-itin-timeline">
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Morning</span><span class="lang-ja">午前</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">Technical observation of PETRONAS Twin Towers engineering and corporate briefings in the city centre.</span>
+                      <span class="lang-ja">ペトロナスツインタワーの構造工学見学および中心業務地区でのビジネス環境調査。</span>
+                    </div>
+                  </div>
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Afternoon</span><span class="lang-ja">午後</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">Transit-oriented accessibility study across KL Sentral and field walk through multicultural heritage commercial streets.</span>
+                      <span class="lang-ja">KLセントラル駅周辺の交通指向型開発（TOD）調査および多文化商業ストリートの散策調査。</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="prog-itin-output-box">
+                <div class="prog-itin-output-box__title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>
+                    <span class="lang-en">Comparative Analysis</span>
+                    <span class="lang-ja">比較分析の作成</span>
+                  </span>
+                </div>
+                <p class="prog-itin-output-box__desc">
+                  <span class="lang-en">Teams compare Osaka and Kuala Lumpur urban transit models, gathering photographic evidence and field data.</span>
+                  <span class="lang-ja">大阪都市圏とクアラルンプールの公共交通・都市空間モデルを比較し、写真とデータを集約します。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 4: DAY 4 -->
+          <div class="prog-day-pane" data-pane="3">
+            <div class="prog-itin-visual">
+              <img src="/EduTourism2/wp-content/uploads/programmes/mflp_day4_pineapple.jpg" alt="Day 4 Pineapple Agritech" class="prog-itin-visual__img">
+              <div class="prog-itin-visual__overlay">
+                <span class="prog-itin-visual__badge">
+                  <span class="lang-en">Agritech &amp; Halal</span>
+                  <span class="lang-ja">食農・アグリテック</span>
+                </span>
+                <div>
+                  <div class="prog-itin-visual__caption">
+                    <span class="lang-en">Commercial Pineapple Research &amp; Halal Economy</span>
+                    <span class="lang-ja">パイナップル先端研究農園・ハラール産業</span>
+                  </div>
+                  <div class="prog-itin-visual__meta">
+                    <span>📍 Agricultural Research Corridor</span>
+                    <span class="lang-en">🍍 Sustainable Agritech</span>
+                    <span class="lang-ja">🍍 持続可能アグリビジネス</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog-itin-details">
+              <div>
+                <div class="prog-itin-badge-row">
+                  <span class="prog-itin-day-label">
+                    <span class="lang-en">Day 4 of 06 · Agritech &amp; Trade</span>
+                    <span class="lang-ja">第4日 · アグリテックと国際食農</span>
+                  </span>
+                </div>
+                <h3 class="prog-itin-title t-serif">
+                  <span class="lang-en">Modern Agritech &amp; Halal Standards</span>
+                  <span class="lang-ja">先端アグリテックとハラール基準</span>
+                </h3>
+                
+                <div class="lang-en" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  Field study of modern commercial pineapple cultivation, cold-chain processing, and global Halal food certification.
+                </div>
+                <div class="lang-ja" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  パイナップル研究農園、自動化コールドチェーン加工ライン、および世界をリードするマレーシア・ハラール認証の現場視察。
+                </div>
+
+                <div class="prog-itin-timeline">
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Morning</span><span class="lang-ja">午前</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">Field inspection of commercial cultivation, precision crop monitoring, and sustainable peat-soil management.</span>
+                      <span class="lang-ja">商業パイナップル農園の視察、精密農業技術、および持続可能な土壌管理の実態調査。</span>
+                    </div>
+                  </div>
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Afternoon</span><span class="lang-ja">午後</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">Processing plant briefing on international Halal assurance, export packaging, and value-added agricultural byproducts.</span>
+                      <span class="lang-ja">加工工場でのハラール品質保証講義、輸出向けパッケージング、および副産物の高付加価値化の解説。</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="prog-itin-output-box">
+                <div class="prog-itin-output-box__title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>
+                    <span class="lang-en">Supply Chain Briefing</span>
+                    <span class="lang-ja">サプライチェーン分析</span>
+                  </span>
+                </div>
+                <p class="prog-itin-output-box__desc">
+                  <span class="lang-en">Teams formulate recommendations on sustainable agriculture, food security, and bilateral import-export channels.</span>
+                  <span class="lang-ja">食料安全保障、持続可能農法、および日本への輸出展開に関する提言をチームでまとめます。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 5: DAY 5 -->
+          <div class="prog-day-pane" data-pane="4">
+            <div class="prog-itin-visual">
+              <img src="/EduTourism2/wp-content/uploads/programmes/mflp_day5_rubber.jpg" alt="Day 5 Rubber Processing" class="prog-itin-visual__img">
+              <div class="prog-itin-visual__overlay">
+                <span class="prog-itin-visual__badge">
+                  <span class="lang-en">Commodities &amp; Shipping</span>
+                  <span class="lang-ja">素材産業と港湾物流</span>
+                </span>
+                <div>
+                  <div class="prog-itin-visual__caption">
+                    <span class="lang-en">Rubber Estate, Polymer Science &amp; Maritime Corridors</span>
+                    <span class="lang-ja">ゴム農園・ポリマー素材・海上物流網</span>
+                  </div>
+                  <div class="prog-itin-visual__meta">
+                    <span>📍 Rubber Research Corridor / Port Klang</span>
+                    <span class="lang-en">🚢 ASEAN Supply Chains</span>
+                    <span class="lang-ja">🚢 ASEAN国際サプライチェーン</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog-itin-details">
+              <div>
+                <div class="prog-itin-badge-row">
+                  <span class="prog-itin-day-label">
+                    <span class="lang-en">Day 5 of 06 · Industrial Corridors</span>
+                    <span class="lang-ja">第5日 · 産業回廊とグローバル流通</span>
+                  </span>
+                </div>
+                <h3 class="prog-itin-title t-serif">
+                  <span class="lang-en">Rubber Processing &amp; Global Export Logistics</span>
+                  <span class="lang-ja">天然ゴム加工と国際海上物流</span>
+                </h3>
+                
+                <div class="lang-en" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  From raw latex tapping to specialized global manufacturing, supply chains, and Port Klang shipping corridors.
+                </div>
+                <div class="lang-ja" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  天然ゴム樹液の採取から先端ポリマー素材の製造、そしてポートクランを通じた東アジア向け海運ネットワークの調査。
+                </div>
+
+                <div class="prog-itin-timeline">
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Morning</span><span class="lang-ja">午前</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">Field demonstration of rubber tapping, coagulation chemistry, and sustainable plantation management.</span>
+                      <span class="lang-ja">ゴム樹液の採取実演見学、凝固化学の講義、および持続可能プランテーション管理の調査。</span>
+                    </div>
+                  </div>
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Afternoon</span><span class="lang-ja">午後</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">Logistics briefing on how Port Klang connects Southeast Asian manufacturing corridors to Osaka and global ports.</span>
+                      <span class="lang-ja">ポートクランが東南アジアの製造業と大阪・世界市場をどのように結んでいるかに関する物流講義。</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="prog-itin-output-box">
+                <div class="prog-itin-output-box__title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>
+                    <span class="lang-en">Final Presentation Rehearsal</span>
+                    <span class="lang-ja">最終プレゼン準備</span>
+                  </span>
+                </div>
+                <p class="prog-itin-output-box__desc">
+                  <span class="lang-en">Mixed teams finalize slide decks and presentation choreography for the bilateral colloquium at IUC.</span>
+                  <span class="lang-ja">翌日のIUC共同コロキウムに向け、混成チーム全員で発表スライドと役割分担を完成させます。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 6: DAY 6 -->
+          <div class="prog-day-pane" data-pane="5">
+            <div class="prog-itin-visual">
+              <img src="/EduTourism2/wp-content/uploads/experiences/mflp_day_06.jpg" alt="Day 6 Colloquium & Ceremony" class="prog-itin-visual__img">
+              <div class="prog-itin-visual__overlay">
+                <span class="prog-itin-visual__badge">
+                  <span class="lang-en">Symposium &amp; Graduation</span>
+                  <span class="lang-ja">成果発表・修了式</span>
+                </span>
+                <div>
+                  <div class="prog-itin-visual__caption">
+                    <span class="lang-en">Bilateral Academic Colloquium &amp; Certificate Conferment</span>
+                    <span class="lang-ja">日馬共同学術コロキウム・履修証明書授与式</span>
+                  </div>
+                  <div class="prog-itin-visual__meta">
+                    <span>📍 IUC Campus / Main Auditorium</span>
+                    <span class="lang-en">🎓 Academic Credentials</span>
+                    <span class="lang-ja">🎓 共同履修証明証書</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog-itin-details">
+              <div>
+                <div class="prog-itin-badge-row">
+                  <span class="prog-itin-day-label">
+                    <span class="lang-en">Day 6 of 06 · Capstone Defense</span>
+                    <span class="lang-ja">第6日 · キャップストーン成果発表と修了</span>
+                  </span>
+                </div>
+                <h3 class="prog-itin-title t-serif">
+                  <span class="lang-en">Academic Colloquium &amp; Farewell Ceremony</span>
+                  <span class="lang-ja">共同学術コロキウム・修了式</span>
+                </h3>
+                
+                <div class="lang-en" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  Formal academic defense of field research findings, faculty evaluation, certificate conferment, and airport departure.
+                </div>
+                <div class="lang-ja" style="font-size: 1.05rem; line-height: 1.55; color: #132418; margin-bottom: 0.75rem;">
+                  混成4チームによる現地調査成果の口頭発表、教員評価、共同履修証明書の授与、および帰国送迎。
+                </div>
+
+                <div class="prog-itin-timeline">
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Morning</span><span class="lang-ja">午前</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">4 mixed working teams deliver 10-minute capstone presentations evaluated by Japanese and Malaysian faculty panels.</span>
+                      <span class="lang-ja">日馬混成4チームが教員審査パネルを前に10分間の英語プレゼンと質疑応答を実施。</span>
+                    </div>
+                  </div>
+                  <div class="prog-itin-time-node">
+                    <span class="prog-itin-time-tag"><span class="lang-en">Afternoon</span><span class="lang-ja">午後</span></span>
+                    <div class="prog-itin-time-desc">
+                      <span class="lang-en">Conferment of Certificates of Completion, group photography, farewell luncheon, and private coach transfer to KLIA.</span>
+                      <span class="lang-ja">修了証書授与式、記念撮影、歓送昼食会、およびKLIA空港への専用車送迎。</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="prog-itin-output-box">
+                <div class="prog-itin-output-box__title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>
+                    <span class="lang-en">Academic Certification</span>
+                    <span class="lang-ja">学術単位履修証明</span>
+                  </span>
+                </div>
+                <p class="prog-itin-output-box__desc">
+                  <span class="lang-en">Participants receive the formal joint Certificate of Completion suitable for university credit transfer recognition.</span>
+                  <span class="lang-ja">各参加学生に大学の単位互換認定に活用可能な正式な共同履修修了証書が授与されます。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 04: 4 INTERDISCIPLINARY MIXED WORKING TEAMS
+       ====================================================================== -->
+  <section class="prog-section" id="section-04-teams" style="padding-top: 4rem;">
+    <div class="prog-container">
+      
+      <div class="exp-section-header">
+        <span class="exp-eyebrow">
+          <span class="lang-en">COHORT ARCHITECTURE</span>
+          <span class="lang-ja">混成チームの編成</span>
+        </span>
+        <h2 class="exp-headline t-serif t-italic">
+          <span class="lang-en">4 Interdisciplinary Mixed Working Teams.</span>
+          <span class="lang-ja">4つの学際的日馬混成ワーキングチーム</span>
+        </h2>
+        <p class="exp-subtext">
+          <span class="lang-en">Each student belongs to one focused interdisciplinary track, paired with Malaysian peers from IUC throughout all field sites.</span>
+          <span class="lang-ja">大阪大学の学生とIUCのマレーシア人学生が専攻を超えてチームを組み、現地調査を共に行います。</span>
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+        
+        <!-- Team 1 -->
+        <div style="background: rgba(255,255,255,0.9); border: 1px solid rgba(19,36,24,0.1); border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-soft);">
+          <div style="font-size: 0.8rem; font-weight: 700; color: #24462c; text-transform: uppercase; margin-bottom: 0.5rem;">Team 01</div>
+          <h3 style="font-size: 1.35rem; color: #132418; margin: 0 0 0.75rem;">
+            <span class="lang-en">Smart Cities &amp; Planned Urbanism</span>
+            <span class="lang-ja">スマート都市・計画都市</span>
+          </h3>
+          <p style="font-size: 0.92rem; color: #435b49; line-height: 1.55;">
+            <span class="lang-en">Investigating Putrajaya administrative planning, high-density metropolitan engineering, and sustainable mobility systems.</span>
+            <span class="lang-ja">プトラジャヤ連邦行政都市の都市マスタープラン、高層建築工学、および持続可能モビリティの調査。</span>
+          </p>
+        </div>
+
+        <!-- Team 2 -->
+        <div style="background: rgba(255,255,255,0.9); border: 1px solid rgba(19,36,24,0.1); border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-soft);">
+          <div style="font-size: 0.8rem; font-weight: 700; color: #24462c; text-transform: uppercase; margin-bottom: 0.5rem;">Team 02</div>
+          <h3 style="font-size: 1.35rem; color: #132418; margin: 0 0 0.75rem;">
+            <span class="lang-en">Agritech &amp; Halal Food Systems</span>
+            <span class="lang-ja">アグリテック・ハラール食農</span>
+          </h3>
+          <p style="font-size: 0.92rem; color: #435b49; line-height: 1.55;">
+            <span class="lang-en">Analyzing commercial crop precision agriculture, food supply-chain security, and international Halal standards.</span>
+            <span class="lang-ja">商業パイナップル精密農業、食料サプライチェーンの安全性、および国際ハラール品質基準の調査。</span>
+          </p>
+        </div>
+
+        <!-- Team 3 -->
+        <div style="background: rgba(255,255,255,0.9); border: 1px solid rgba(19,36,24,0.1); border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-soft);">
+          <div style="font-size: 0.8rem; font-weight: 700; color: #24462c; text-transform: uppercase; margin-bottom: 0.5rem;">Team 03</div>
+          <h3 style="font-size: 1.35rem; color: #132418; margin: 0 0 0.75rem;">
+            <span class="lang-en">Materials &amp; Maritime Corridors</span>
+            <span class="lang-ja">素材産業・国際海運物流</span>
+          </h3>
+          <p style="font-size: 0.92rem; color: #435b49; line-height: 1.55;">
+            <span class="lang-en">Connecting raw natural resource tapping with specialized polymer processing and Port Klang export corridors to East Asia.</span>
+            <span class="lang-ja">天然ゴム素材加工、先端ポリマー製造、およびポートクランを通じた東アジア輸出回廊の調査。</span>
+          </p>
+        </div>
+
+        <!-- Team 4 -->
+        <div style="background: rgba(255,255,255,0.9); border: 1px solid rgba(19,36,24,0.1); border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-soft);">
+          <div style="font-size: 0.8rem; font-weight: 700; color: #24462c; text-transform: uppercase; margin-bottom: 0.5rem;">Team 04</div>
+          <h3 style="font-size: 1.35rem; color: #132418; margin: 0 0 0.75rem;">
+            <span class="lang-en">Living Heritage &amp; Society</span>
+            <span class="lang-ja">生きた文化遺産・多民族共生</span>
+          </h3>
+          <p style="font-size: 0.92rem; color: #435b49; line-height: 1.55;">
+            <span class="lang-en">Examining multicultural integration, community heritage preservation, and socio-economic development across Malaysia.</span>
+            <span class="lang-ja">多民族・多文化共生の仕組み、歴史的遺産の保存活用、およびコミュニティの持続可能性の調査。</span>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 05: FIELDWORK OUTPUTS (DELIVERABLES)
+       ====================================================================== -->
+  <section class="prog-section" id="section-05-outputs" style="padding-top: 4rem;">
+    <div class="prog-container">
+      
+      <div class="exp-section-header">
+        <span class="exp-eyebrow">
+          <span class="lang-en">ACADEMIC DELIVERABLES</span>
+          <span class="lang-ja">研修の成果物</span>
+        </span>
+        <h2 class="exp-headline t-serif t-italic">
+          <span class="lang-en">Tangible Field Research Deliverables.</span>
+          <span class="lang-ja">確かな学びを証明する具体的な学術成果物</span>
+        </h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        
+        <!-- Output 1 -->
+        <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.25rem; box-shadow: var(--shadow-soft);">
+          <div style="font-size: 1.8rem; font-family: 'Saol Display', serif; font-style: italic; color: #24462c; margin-bottom: 0.5rem;">01</div>
+          <h3 style="font-size: 1.35rem; color: #132418; margin: 0 0 0.75rem;">
+            <span class="lang-en">1-Page Field Research Brief</span>
+            <span class="lang-ja">1ページ・フィールド調査概要書</span>
+          </h3>
+          <p style="font-size: 0.92rem; color: #435b49; line-height: 1.6;">
+            <span class="lang-en">A concise policy brief prepared collaboratively by mixed student teams outlining primary field findings and actionable recommendations.</span>
+            <span class="lang-ja">日馬混成チームが共同で作成する、現地調査データと実践的な政策提言をまとめた簡潔なエグゼクティブ・サマリー。</span>
+          </p>
+        </div>
+
+        <!-- Output 2 -->
+        <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.25rem; box-shadow: var(--shadow-soft);">
+          <div style="font-size: 1.8rem; font-family: 'Saol Display', serif; font-style: italic; color: #24462c; margin-bottom: 0.5rem;">02</div>
+          <h3 style="font-size: 1.35rem; color: #132418; margin: 0 0 0.75rem;">
+            <span class="lang-en">Capstone Team Defense</span>
+            <span class="lang-ja">最終キャップストーン口頭発表</span>
+          </h3>
+          <p style="font-size: 0.92rem; color: #435b49; line-height: 1.6;">
+            <span class="lang-en">A 10-minute formal academic presentation delivered to a faculty review panel at IUC followed by faculty Q&amp;A.</span>
+            <span class="lang-ja">IUCメイン講堂にて両大学の教員審査パネルを前に実施される、スライドを用いた10分間の英語口頭発表と質疑応答。</span>
+          </p>
+        </div>
+
+        <!-- Output 3 -->
+        <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.25rem; box-shadow: var(--shadow-soft);">
+          <div style="font-size: 1.8rem; font-family: 'Saol Display', serif; font-style: italic; color: #24462c; margin-bottom: 0.5rem;">03</div>
+          <h3 style="font-size: 1.35rem; color: #132418; margin: 0 0 0.75rem;">
+            <span class="lang-en">Joint Academic Certificate</span>
+            <span class="lang-ja">共同履修修了証書・成績証明</span>
+          </h3>
+          <p style="font-size: 0.92rem; color: #435b49; line-height: 1.6;">
+            <span class="lang-en">Official Certificate of Completion awarded jointly by Olympia Education and Innovative University College (IUC) for university credit transfer.</span>
+            <span class="lang-ja">大学の単位互換やキャリアポートフォリオに正式に活用できる、オリンピアおよびIUC連名発行の修了証明書。</span>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 06: BILATERAL GOVERNANCE
+       ====================================================================== -->
+  <section class="prog-section" id="section-06-collaboration" style="padding-top: 4rem;">
+    <div class="prog-container">
+      
+      <div class="exp-section-header">
+        <span class="exp-eyebrow">
+          <span class="lang-en">INSTITUTIONAL PARTNERSHIP</span>
+          <span class="lang-ja">3者による連携体制</span>
+        </span>
+        <h2 class="exp-headline t-serif t-italic">
+          <span class="lang-en">Three-Pillar Bilateral Governance.</span>
+          <span class="lang-ja">安心・安全を支える3者の強固な連携ガバナンス</span>
+        </h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        
+        <div style="background: rgba(255,255,255,0.92); border-radius: 18px; padding: 2rem; border: 1px solid rgba(19,36,24,0.08);">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #5d7565; letter-spacing: 0.08em; text-transform: uppercase;">
+            <span class="lang-en">Program Coordinator</span>
+            <span class="lang-ja">プログラム統括・運営</span>
+          </span>
+          <h3 style="font-size: 1.3rem; margin: 0.4rem 0 0.6rem; color: #132418;">Olympia Education Malaysia</h3>
+          <p style="font-size: 0.92rem; color: #435b49; line-height: 1.55;">
+            <span class="lang-en">Responsible for curriculum development, ground logistics, Japanese-bilingual pastoral care, risk management, and site clearances.</span>
+            <span class="lang-ja">シラバス企画、宿泊・専用車手配、日馬バイリンガル引率、24時間安全管理、および訪問先手配を担当。</span>
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.92); border-radius: 18px; padding: 2rem; border: 1px solid rgba(19,36,24,0.08);">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #5d7565; letter-spacing: 0.08em; text-transform: uppercase;">
+            <span class="lang-en">Academic Host Campus</span>
+            <span class="lang-ja">現地学術受入大学</span>
+          </span>
+          <h3 style="font-size: 1.3rem; margin: 0.4rem 0 0.6rem; color: #132418;">Innovative University College</h3>
+          <p style="font-size: 0.92rem; color: #435b49; line-height: 1.55;">
+            <span class="lang-en">Provides lecture facilities, faculty keynote seminars, local peer student integration, academic evaluation, and certification.</span>
+            <span class="lang-ja">キャンパス講義施設、教員による専門セミナー、現地学生バディの選抜、学術評価、および修了証書発行を担当。</span>
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.92); border-radius: 18px; padding: 2rem; border: 1px solid rgba(19,36,24,0.08);">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #5d7565; letter-spacing: 0.08em; text-transform: uppercase;">
+            <span class="lang-en">Academic Partner</span>
+            <span class="lang-ja">提携大学</span>
+          </span>
+          <h3 style="font-size: 1.3rem; margin: 0.4rem 0 0.6rem; color: #132418;">University of Osaka (Japan)</h3>
+          <p style="font-size: 0.92rem; color: #435b49; line-height: 1.55;">
+            <span class="lang-en">Student recruitment, academic pre-departure orientation, faculty consultation, and credit allocation.</span>
+            <span class="lang-ja">参加学生の募集・選抜、事前学術オリエンテーション、引率教員指導、および自大学における単位認定。</span>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 07: FAQ ACCORDION
+       ====================================================================== -->
+  <section class="prog-section" id="section-07-faq" style="padding-top: 4rem;">
+    <div class="prog-container" style="max-width: 900px;">
+      
+      <div class="exp-section-header">
+        <span class="exp-eyebrow">
+          <span class="lang-en">COMMON QUESTIONS</span>
+          <span class="lang-ja">よくある質問</span>
+        </span>
+        <h2 class="exp-headline t-serif t-italic">
+          <span class="lang-en">Frequently Asked Questions.</span>
+          <span class="lang-ja">参加・実施に関するFAQ</span>
+        </h2>
+      </div>
+
+      <div class="prog-faq-list" style="display: flex; flex-direction: column; gap: 1rem;">
+        
+        <!-- FAQ 1 -->
+        <div style="background: #ffffff; border-radius: 16px; padding: 1.5rem; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-soft);">
+          <h4 style="font-size: 1.15rem; color: #132418; margin: 0 0 0.5rem; font-weight: 600;">
+            <span class="lang-en">Who is eligible to participate in MFLP 2027?</span>
+            <span class="lang-ja">MFLP 2027の参加対象者は誰ですか？</span>
+          </h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; color: #435b49; margin: 0;">
+            <span class="lang-en">Undergraduate students enrolled in partner universities (including Osaka University) across disciplines including Social Sciences, Urban Studies, Engineering, International Business, Agriculture and Environmental Sciences.</span>
+            <span class="lang-ja">大阪大学をはじめとする提携大学の学部生が対象です。文系・理系を問わず、社会科学、都市計画、国際ビジネス、農学、環境学など多様な専攻の学生が参加できます。</span>
+          </p>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div style="background: #ffffff; border-radius: 16px; padding: 1.5rem; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-soft);">
+          <h4 style="font-size: 1.15rem; color: #132418; margin: 0 0 0.5rem; font-weight: 600;">
+            <span class="lang-en">What is the language of instruction and ground coordination?</span>
+            <span class="lang-ja">使用言語と現地サポート体制はどうなっていますか？</span>
+          </h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; color: #435b49; margin: 0;">
+            <span class="lang-en">All academic lectures and mixed team collaborations are conducted in English. Professional bilingual Japanese-speaking coordinators from Olympia Education accompany the cohort 24/7 to support logistics and safety.</span>
+            <span class="lang-ja">学術講義およびチームディスカッションは英語で行われます。全行程においてオリンピアの日本語バイリンガル専任スタッフが24時間帯同し、安全・生活面を完全にサポートします。</span>
+          </p>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div style="background: #ffffff; border-radius: 16px; padding: 1.5rem; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-soft);">
+          <h4 style="font-size: 1.15rem; color: #132418; margin: 0 0 0.5rem; font-weight: 600;">
+            <span class="lang-en">Can students receive academic credits for this program?</span>
+            <span class="lang-ja">大学の正規単位として認定されますか？</span>
+          </h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; color: #435b49; margin: 0;">
+            <span class="lang-en">Yes. The syllabus is modularly structured to fulfill standard international field study criteria (equivalent to 2-3 academic credits), subject to home faculty accreditation.</span>
+            <span class="lang-ja">はい。本プログラムは大学の海外実習科目（2〜3単位相当）の基準を満たすよう設計されており、大学側のシラバス照合を経て正規単位として認定可能です。</span>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 08: ACADEMIC CONSULTATION FORM
+       ====================================================================== -->
+  <section class="prog-section" id="section-08-consultation" style="padding-top: 4rem; padding-bottom: 6rem;">
+    <div class="prog-container" style="max-width: 960px;">
+      
+      <div style="background: rgba(255, 255, 255, 0.92); border: 1px solid rgba(19, 36, 24, 0.12); border-radius: 28px; padding: 3rem 2.5rem; box-shadow: 0 16px 45px rgba(19, 36, 24, 0.08); backdrop-filter: blur(16px);">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 2.5rem auto;">
+          <span class="exp-eyebrow">
+            <span class="lang-en">ACADEMIC CONSULTATION · 2026/2027</span>
+            <span class="lang-ja">学術相談・プログラム企画相談</span>
+          </span>
+          <h2 class="exp-headline t-serif t-italic" style="font-size: 2rem; margin: 0.5rem 0;">
+            <span class="lang-en">Design a Field Learning Cohort for Your University.</span>
+            <span class="lang-ja">貴大学専用の現地研修・国際モビリティを企画</span>
+          </h2>
+          <p class="exp-subtext" style="font-size: 0.98rem; margin: 0;">
+            <span class="lang-en">We partner directly with university international offices, deans, and academic faculties to tailor custom study immersions.</span>
+            <span class="lang-ja">大学の国際交流センター、学部長、担当教員と連携し、単位認定要件に合わせたオーダーメイド研修を設計します。</span>
+          </p>
+        </div>
+
+        <form action="/EduTourism2/programmes/consultation" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <input type="hidden" name="_token" value="RT0oCoGgK0FzpqvLq2CvxScOgfTWCEIQjfCDC8nz" autocomplete="off">
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: #132418;">
+              <span class="lang-en">University / Institution *</span>
+              <span class="lang-ja">大学名・所属機関 *</span>
+            </label>
+            <input type="text" name="institution_name" required placeholder="e.g. University of Osaka" style="width: 100%; padding: 0.85rem 1rem; border: 1px solid rgba(19,36,24,0.15); border-radius: 8px; font-size: 0.95rem; font-family: inherit;">
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: #132418;">
+              <span class="lang-en">Contact Person &amp; Title *</span>
+              <span class="lang-ja">ご担当者様氏名・役職 *</span>
+            </label>
+            <input type="text" name="contact_person" required placeholder="e.g. Prof. Taro Yamada" style="width: 100%; padding: 0.85rem 1rem; border: 1px solid rgba(19,36,24,0.15); border-radius: 8px; font-size: 0.95rem; font-family: inherit;">
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: #132418;">
+              <span class="lang-en">Institutional Email *</span>
+              <span class="lang-ja">大学公式メールアドレス *</span>
+            </label>
+            <input type="email" name="email" required placeholder="yamada@osaka-u.ac.jp" style="width: 100%; padding: 0.85rem 1rem; border: 1px solid rgba(19,36,24,0.15); border-radius: 8px; font-size: 0.95rem; font-family: inherit;">
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: #132418;">
+              <span class="lang-en">Estimated Cohort Size</span>
+              <span class="lang-ja">想定参加人数</span>
+            </label>
+            <input type="text" name="cohort_size" placeholder="e.g. 12–16 Undergraduates" style="width: 100%; padding: 0.85rem 1rem; border: 1px solid rgba(19,36,24,0.15); border-radius: 8px; font-size: 0.95rem; font-family: inherit;">
+          </div>
+
+          <div style="grid-column: 1 / -1;">
+            <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: #132418;">
+              <span class="lang-en">Target Study Themes &amp; Period *</span>
+              <span class="lang-ja">希望研修時期・検討中のテーマ *</span>
+            </label>
+            <textarea name="message" rows="4" required placeholder="e.g. Spring 2027, focusing on Smart Cities and Sustainable Agritech..." style="width: 100%; padding: 0.85rem 1rem; border: 1px solid rgba(19,36,24,0.15); border-radius: 8px; font-size: 0.95rem; font-family: inherit; resize: vertical;"></textarea>
+          </div>
+
+          <div style="grid-column: 1 / -1; text-align: center; margin-top: 1rem;">
+            <button type="submit" class="btn-primary" style="padding: 1rem 3rem; font-size: 1.05rem;">
+              <span class="lang-en">Submit Consultation Request</span>
+              <span class="lang-ja">学術相談を送信する</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
   </main>
 
   <!-- ======================================================================
@@ -1127,6 +1268,22 @@
 
   <!-- Core JavaScript -->
   <script src="/EduTourism2/js/main.js"></script>
-  <script src="/EduTourism2/wp-content/themes/unseen/public/scripts/programmes.js"></script>
+  <script>
+  // Tab switcher for 6 days
+  document.addEventListener("DOMContentLoaded", function() {
+    var dayButtons = document.querySelectorAll(".prog-day-btn");
+    var dayPanes = document.querySelectorAll(".prog-day-pane");
+    
+    dayButtons.forEach(function(btn, i) {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        dayButtons.forEach(function(b) { b.classList.remove("is-active"); });
+        dayPanes.forEach(function(p) { p.classList.remove("is-active"); });
+        btn.classList.add("is-active");
+        if (dayPanes[i]) dayPanes[i].classList.add("is-active");
+      });
+    });
+  });
+</script>
 </body>
 </html>

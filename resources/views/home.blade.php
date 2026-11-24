@@ -17,6 +17,15 @@
     <p class="hero-subtext">
       Connecting international universities, faculties, and students with transformative field immersion, living cultural heritage, smart cities, and sustainable ecosystems across Malaysia.
     </p>
+
+    <!-- Visual Metrics Bar -->
+    <div class="metrics-bar">
+      <div class="metric-pill"><span class="metric-pill-dot"></span> 7 Educational Focus Areas</div>
+      <div class="metric-pill"><span class="metric-pill-dot"></span> 6-Day Structured Field Itineraries</div>
+      <div class="metric-pill"><span class="metric-pill-dot"></span> Bilateral Academic Credits</div>
+      <div class="metric-pill"><span class="metric-pill-dot"></span> Industry &amp; Ecosystem Immersion</div>
+    </div>
+
     <div class="hero-actions">
       <a href="{{ route('experiences') }}" class="btn-primary">
         <span>Explore 7 Areas</span>
