@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block direct access to hidden files and directories
+    RewriteRule (^|/)\.(?!well-known) - [F]
+
+    # Rewrite all requests to public/ directory for XAMPP compatibility
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
