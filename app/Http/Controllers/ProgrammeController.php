@@ -136,3 +136,4 @@ class ProgrammeController extends Controller
         return redirect()->back()->with('success', 'Thank you! Your academic consultation request has been received. Our partnership team will contact your institution within 1-2 business days.');
     }
 }
+

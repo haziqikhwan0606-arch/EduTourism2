@@ -25,3 +25,4 @@ class ContactController extends Controller
         return redirect()->back()->with('success', 'Thank you! Your inquiry has been sent to our academic partnerships team (edutourism@olympia-education.com). We will get back to you shortly.');
     }
 }
+

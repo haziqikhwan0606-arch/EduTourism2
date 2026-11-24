@@ -206,3 +206,4 @@ class ExperienceController extends Controller
         return view('experiences', compact('areas', 'learningStages', 'destinations'));
     }
 }
+
